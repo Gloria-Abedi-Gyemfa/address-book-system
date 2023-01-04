@@ -1,16 +1,13 @@
 import React from 'react';
-import {BsThreeDotsVertical} from "react-icons/bs"
 import {BiHome, BiUser} from "react-icons/bi"
-import {GrAddCircle, GrCircleInformation,GrLogout} from "react-icons/gr";
-import {TbSettings} from "react-icons/tb"
+import {MdAddCircleOutline} from "react-icons/md";
+import {TbSettings,TbLogout} from "react-icons/tb"
+import {RiInformationLine} from "react-icons/ri"
 
 const Sidebar = () => {
     const style = { color: " #F67F20", width:"27px", height:"25px" }
   return (
     <div className='side-bar'>
-        <div><BsThreeDotsVertical style={style}/>
-        <span>velio</span>
-        </div>
 
         <div><BiHome style={style} />
         <span>Home</span>
@@ -20,16 +17,16 @@ const Sidebar = () => {
         <span>Profile</span>
         </div>
 
-        <div><GrAddCircle style={style}/>
+        <div><MdAddCircleOutline style={style}/>
         <span>Add address</span></div>
 
         <div><TbSettings style={style}/>
         <span>Settings</span></div>
 
-        <div><GrCircleInformation style={style}/>
+        <div><RiInformationLine style={style}/>
         <span>About</span></div>
 
-        <div><GrLogout style={style}/><span>Logout</span></div>
+        <div><TbLogout style={style}/><span>Logout</span></div>
         
     </div>
   )

@@ -1,31 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
 :root{
   font-family: 'Montserrat', sans-serif;
+  color:  #003048;
+
+}
+button{
+
+  background-color: #f67f20;
+  color: white;
+  border: none;
+}
+.home-page{
   background-image: url(./Velio/Velio_bg.jpg);
 }
+.navigation-bars{
+  display: flex;
+  flex-direction: column;
+}
+
 .side-bar{
+  position: fixed;
 font-size: 15px;
 font-weight: 500;
 line-height: 18px;
 letter-spacing: 0em;
-/* text-align: left; */
-background-color: white;
 color:  #003048;
-width: fit-content;
+background-color: white;
+
+width: 20%;
+height: 70vh;
+
+margin-left: 2%;
+margin-top: 5%;
+
+
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+align-content: center;
+
+border-right: 1px solid #003048;
+
 
 }
-.side-bar span{
-  margin: auto;
-}
-.side-bar span:active{
+
+.side-bar span:hover{
   cursor: pointer;
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: #F67F20;
-  ;
+  transform: scale(1.4);  
   
+}
+.navbar{
+  width: 75vw;
+  margin-left: auto;
+  background-image: url(./Velio/Velio_bg.jpg);
+  margin-right: 2%;
+  position: fixed;
+}
+
+section{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+h1{
+  color: #f67f20;
+}
+.menu-icon{
+  visibility: hidden;
+}
+
+.user-image{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.icons{
+  color: white;
+  width: 27px;
+  height: 27px;
+  margin: 10px;
+}
+.Add-button{
+  background-color: #ff4c4b;
+  border-radius: 10px 10px 7px 30px;
+
+
+}
+.edit-button{
+  background-color: #0ad065;
+  border-radius: 20px 20px 50px 50px;
+}
+.delete-button{
+  background-color: #ff923c;
+  border-radius: 20px 20px 50px 50px;
+}
+.share-button{
+  background-color: #0ad065;
+  border-radius: 20px 20px 50px 50px;
+}
+.scan-button{
+  width: min-content;
+  background-color: #5e8bff;
+  border-radius: 20px 20px 50px 50px;
+}
+.settings-button{
+  width: min-content;
+  background-color: #65f5fe;
+  border-radius: 15px 12px 30px 7px;
+}
+.startup{
+  font-family: 'Poppins', sans-serif;
+  width: 50vw;
+  margin: 10% auto;
+}
+.image-wrapper{
+  padding: auto;
+}
+.welcome-message{
+  background-color: white;
+  /* opacity: 5; */
+}
+
+.login-options{
+  background-image: url(./Velio/Velio_bg.jpg);
+  width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.login-wrapper{
+  width: 45%;
+}
+.have-account{
+  text-align: right;
+}
+
+@media  (max-width:480px) {
+  .side-bar{
+    display: none;
+  }
+  .navbar{
+    width: 100%;
+  }
+  .menu-icon{
+    visibility: visible;
+    fill: #f67f20;
+  }
+ 
 }

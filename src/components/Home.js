@@ -4,9 +4,11 @@ import Sidebar from './Sidebar'
 
 const Home = () => {
   return (
-    <div>
+    <div className='home-page'>
+      <div className='navigation-bars'>
         <Navbar/>
         <Sidebar/>
+      </div>
     </div>
   )
 }
