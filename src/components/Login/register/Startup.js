@@ -5,7 +5,7 @@ const Startup = () => {
   return (
     <div className='startup'>
         <div className='image-wrapper'>
-            <img src={velio}/>
+            <img src={velio} alt='post box'/>
            <p className='welcome-message'>Welcome to velio ...an addressing solution</p>
         </div>
 

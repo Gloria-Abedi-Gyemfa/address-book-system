@@ -1,77 +1,89 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import {BiMenu,BiSearchAlt, BiEditAlt} from "react-icons/bi";
-import {MdOutlineAdd,MdQrCode2, MdOutlineIosShare} from "react-icons/md";
-import {RiDeleteBin5Line} from "react-icons/ri";
-import {FiSettings} from "react-icons/fi"
- 
-
-
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min";
+import { BiMenu, BiSearchAlt, BiEditAlt } from "react-icons/bi";
+import { MdOutlineAdd, MdQrCode2, MdOutlineIosShare } from "react-icons/md";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { FiSettings } from "react-icons/fi";
+import logo from "../images/getpostman-icon.svg";
 
 const Navbar = () => {
-
   return (
-    <div className='navbar'>
-      <section className='section-1'>
-        <BiMenu className='menu-icon'/>
-        <h1>velio</h1>
-        <img className='user-image' alt='user-image' src='#'/>
+    <div className="navbar ">
+      <section className="section-1">
+        <BiMenu className="menu-icon" />
+        <img src={logo} alt="logo" className="logo" />
+        <h1 className="text-logo">Postman</h1>
+        <BiSearchAlt className="search" />
+        <img className="user-image" alt="user" src="#" />
       </section>
 
-      <section className='input-group mb-3 search-bar'>
-          <span class="input-group-text" id="basic-addon1"><BiSearchAlt/></span>
-          <input type="text" class="form-control" placeholder="search for address" aria-label="Username" aria-describedby="basic-addon1"/>
-        </section>
-      
+      {/* <section className="input-group mb-3 search-bar">
+        <span class="input-group-text" id="basic-addon1">
+          <BiSearchAlt />
+        </span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="search for address"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+      </section>
+
       <section>
         <div>
-          <div className='Add-button '>
-            <MdOutlineAdd className='icons '/>
+          <div className="Add-button ">
+            <MdOutlineAdd className="icons " />
           </div>
-          <p className='funct-text'>Add</p>
+          <p className="funct-text">Add</p>
         </div>
 
         <div>
-          <div className='edit-button'>
-            <BiEditAlt className='icons'/>
+          <div className="edit-button">
+            <BiEditAlt className="icons" />
           </div>
-          <p className='funct-text '>Edit</p>
+          <p className="funct-text ">Edit</p>
         </div>
 
         <div>
-          <div className='delete-button'>
-            <RiDeleteBin5Line className='icons'/>
+          <div className="delete-button">
+            <RiDeleteBin5Line className="icons" />
           </div>
-          <p className='funct-text'> Delete</p>
+          <p className="funct-text"> Delete</p>
         </div>
 
         <div>
-          <div className='scan-button'>
-            <MdQrCode2 className=' icons' />
+          <div className="scan-button">
+            <MdQrCode2 className=" icons" />
           </div>
-          <p className='funct-text'>Scan QR<br/>code</p>
+          <p className="funct-text">
+            Scan QR
+            <br />
+            code
+          </p>
         </div>
 
         <div>
-          <div className='share-button'>
-          <MdOutlineIosShare className='icons'/>
+          <div className="share-button">
+            <MdOutlineIosShare className="icons" />
           </div>
-          <p className='funct-text'>Share</p>
+          <p className="funct-text">Share</p>
         </div>
         <div>
-          <div className='settings-button'>
-            <FiSettings className='icons'/>
+          <div className="settings-button">
+            <FiSettings className="icons" />
           </div>
-          <p className='funct-text'>Settings</p>
+          <p className="funct-text">Settings</p>
         </div>
-      </section>
-
-
-      
-  
+      </section> */}
     </div>
-  )
-}
+  );
+  let searchBar = document.querySelector("h1");
+  function getSearchbar() {
+    searchBar.innerHTML = "hello";
+  }
+  searchBar.onclick = getSearchbar;
+};
 
-export default Navbar
+export default Navbar;
