@@ -1,0 +1,44 @@
+.login{
+    display: flex;
+    /* padding: auto; */
+    margin-left: 25%;
+    margin-top: 100px;
+}
+.login-image{
+    width: 40%;
+   
+}
+.login h2{
+    margin: auto;
+}
+form{  
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    border: 1px solid #E9E3B5;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+}
+input{
+    width: 80%;
+    height: 40px;
+    margin-inline: auto;
+    border: none;
+    border-radius: 12px;
+    background-color: #E9E3B5;
+}
+.email{
+    width: 80%;
+    /* margin-top: 40px; */
+    margin-bottom: 40px;
+}
+.password{
+    width: 80%;
+    margin-bottom: 40px;
+}
+.login button{
+    width: 60%;
+    margin: auto;
+    height: 40px;
+}
