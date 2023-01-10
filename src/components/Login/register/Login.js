@@ -1,9 +1,12 @@
 import React from 'react';
-import "./Login.css"
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <div>
+      <form>
+        <h2>LOGIN</h2>
+      </form>
+    </div>
   )
 }
 
