@@ -48,6 +48,7 @@ section {
 }
 .section-1 {
   background-color: #003048;
+  color: #f67f20;
 }
 .text-logo {
   color: #f67f20;
@@ -61,10 +62,12 @@ section {
   display: none;
 }
 
-.user-image {
-  margin-top: auto;
-  margin-bottom: auto;
+.search-icon {
+  cursor: pointer;
+  
 }
+
+
 .icons {
   color: white;
   width: 27px;
@@ -99,32 +102,6 @@ section {
   width: min-content;
   background-color: #65f5fe;
   border-radius: 15px 12px 30px 7px;
-}
-.startup {
-  font-family: "Poppins", sans-serif;
-  width: 50vw;
-  margin: 10% auto;
-}
-.image-wrapper {
-  padding: auto;
-}
-.welcome-message {
-  background-color: white;
-  /* opacity: 5; */
-}
-
-.login-options {
-  background-image: url(./Velio/Velio_bg.jpg);
-  width: 40%;
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-}
-.login-wrapper {
-  width: 45%;
-}
-.have-account {
-  text-align: right;
 }
 
 @media (max-width: 480px) {

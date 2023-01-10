@@ -1,20 +1,20 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import { BiMenu, BiSearchAlt, BiEditAlt } from "react-icons/bi";
 import { MdOutlineAdd, MdQrCode2, MdOutlineIosShare } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FiSettings } from "react-icons/fi";
-import logo from "../images/getpostman-icon.svg";
+// import logo from "../images/post.png";
 
 const Navbar = () => {
   return (
     <div className="navbar ">
       <section className="section-1">
         <BiMenu className="menu-icon" />
-        <img src={logo} alt="logo" className="logo" />
-        <h1 className="text-logo">Postman</h1>
-        <BiSearchAlt className="search" />
+        {/* <img src={logo} alt="logo" className="logo" /> */}
+        <h1 className="text-logo">Velio</h1>
+        <BiSearchAlt className="search-icon" />
         <img className="user-image" alt="user" src="#" />
       </section>
 
@@ -79,11 +79,11 @@ const Navbar = () => {
       </section> */}
     </div>
   );
-  let searchBar = document.querySelector("h1");
-  function getSearchbar() {
-    searchBar.innerHTML = "hello";
-  }
-  searchBar.onclick = getSearchbar;
+  //   let searchBar = document.querySelector("h1");
+  //   function getSearchbar() {
+  //     searchBar.innerHTML = "hello";
+  //   }
+  //   searchBar.addEventListener = ("click", getSearchbar);
 };
 
 export default Navbar;
