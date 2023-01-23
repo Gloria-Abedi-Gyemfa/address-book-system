@@ -2,16 +2,19 @@
     display: flex;
     /* padding: auto; */
     margin-left: 25%;
-    margin-top: 100px;
+    /* margin-right: 25% ; */
+    margin-top: 10%; 
+    /* margin: 20%; */
+
+
 }
 .login-image{
     width: 40%;
-   
 }
 .login h2{
     margin: auto;
 }
-form{  
+form{ 
     display: flex;
     flex-direction: column;
     width: 360px;
@@ -41,4 +44,12 @@ input{
     width: 60%;
     margin: auto;
     height: 40px;
+}
+.alt{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.alt_register{
+    margin: auto;
 }

@@ -116,3 +116,7 @@ section {
     fill: #f67f20;
   }
 }
+
+a{
+  text-decoration: none;
+}

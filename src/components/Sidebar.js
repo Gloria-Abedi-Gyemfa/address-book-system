@@ -3,6 +3,7 @@ import {BiHome, BiUser} from "react-icons/bi"
 import {MdAddCircleOutline} from "react-icons/md";
 import {TbSettings,TbLogout} from "react-icons/tb"
 import {RiInformationLine} from "react-icons/ri"
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     const style = { color: " #F67F20", width:"27px", height:"25px" }
@@ -26,7 +27,12 @@ const Sidebar = () => {
         <div><RiInformationLine style={style}/>
         <span>About</span></div>
 
-        <div><TbLogout style={style}/><span>Logout</span></div>
+        <div><TbLogout style={style}/>
+        <a href='/login'>
+        <span>Logout</span>
+        </a>
+        </div>
+        
         
     </div>
   )
