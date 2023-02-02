@@ -6,26 +6,18 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import axios from "axios";
 
 const SignUp = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
-  const getEmail = (e) => {
-    setEmail(e.target.value)
-  }
-  const getPassword = (e) => {
-    setPassword(e.target.value)
-  }
-  const sendData = (e) => {
+  const handleSignup = (e) =>{
     e.preventDefault()
-    axios.post('https://address-book-system.onrender.com/api/v1/auth/register',
-    {
-      email: email,
-      password: password
+    axios.post("https://address-book-system.onrender.com/api/v1/auth/register", {
+      email : email,
+      password : password
     })
-    // console.log(email)
-    // console.log(password)
   }
-
+  
+  console.log('email')
   return (
     <div>
       <div className="login">
@@ -34,27 +26,27 @@ const SignUp = () => {
         </Link>
 
         <img src={signup} className="login-image" />
-        <form>
+        <form onSubmit={handleSignup}>
           <h2>SignUp</h2>
           <input
             type="email"
             placeholder="E-mail "
             className="email form-control"
-            onChange={getEmail}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input
             type="password"
             placeholder="Password"
             className="password form-control" maxLength="8"
-            onChange={getPassword}
+            onChange={(e)=>setPassword(e.target.value)}
             required 
           />
-          <button type="submit" onClick={sendData}>Create Account</button>
+          <button type="submit" >Create Account</button>
 
           <section className="alt">
-            <p>Already have an account?</p>
-            <Link className="alt_register link-danger">Login</Link>
+            <p className="have-account">Already have an account?</p>
+            <Link className="alt_register link-danger" to="/login">Login</Link>
           </section>
         </form>
       </div>
