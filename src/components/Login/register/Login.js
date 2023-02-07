@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 import axios from "axios";
+import api from "../../../services/Api";
+
 
 const Login = () => {
  
@@ -13,20 +15,29 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("https://address-book-system.onrender.com/api/v1/auth/login", {
-        email: getEmail,
-        password: getPassword
-      })
+    const data = {
+      email: getEmail,
+      password: getPassword
+    }
+    api().post("/auth/login", data)
+    .then((res)=>{
+      console.log(res)
+    })
+
+    // axios
+    //   .post("https://address-book-system.onrender.com/api/v1/auth/login", {
+    //     email: getEmail,
+    //     password: getPassword
+    //   })
       
   };
-  const validateEmail = (email) => {
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(email)) {
-      return "Invalid email address";
-    }
-    return "";
-  };
+  // const validateEmail = (email) => {
+  //   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  //   if (!emailRegex.test(email)) {
+  //     return "Invalid email address";
+  //   }
+  //   return "";
+  // };
   
 
 

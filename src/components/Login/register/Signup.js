@@ -15,9 +15,15 @@ const SignUp = () => {
       email : email,
       password : password
     })
+    .then(response => {
+      console.log(JSON.stringify({email : email,
+        password : password}));
+    })
+    .catch(e => {
+      console.log(e);
+    });
   }
   
-  console.log('email')
   return (
     <div>
       <div className="login">
