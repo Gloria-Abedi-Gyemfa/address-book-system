@@ -4,21 +4,34 @@ import signup from "../../../images/signup.jpg";
 import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import axios from "axios";
+import Login from "./Login";
+import api from "../../../services/Api";
 
 const SignUp = () => {
+  const [success, setSuccess] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
   const handleSignup = (e) =>{
     e.preventDefault()
-    axios.post("https://address-book-system.onrender.com/api/v1/auth/register", {
+    const data ={
       email : email,
       password : password
-    })
+    }
+    api().post("/auth/register", data)
     .then(response => {
-      console.log(JSON.stringify({email : email,
-        password : password}));
+      console.log(response.data)
+      setSuccess(response.data.success)
     })
+    // .then(()=>{
+    //   if(data.message === 
+    //     "User created successfully"){
+    //       <Login/>
+    //     }
+    //     else{
+    //       console.log(data.message)
+    //     }
+    //   })
     .catch(e => {
       console.log(e);
     });
@@ -26,7 +39,7 @@ const SignUp = () => {
   
   return (
     <div>
-      <div className="login">
+      {!success ? <div className="login">
         <Link to="/startup">
           <IoMdArrowRoundBack />
         </Link>
@@ -36,14 +49,14 @@ const SignUp = () => {
           <h2>SignUp</h2>
           <input
             type="email"
-            placeholder="E-mail "
+            placeholder="E-mail... "
             className="email form-control"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Password..."
             className="password form-control" maxLength="8"
             onChange={(e)=>setPassword(e.target.value)}
             required 
@@ -55,7 +68,7 @@ const SignUp = () => {
             <Link className="alt_register link-danger" to="/login">Login</Link>
           </section>
         </form>
-      </div>
+      </div> : <Login/>}
     </div>
   );
 };

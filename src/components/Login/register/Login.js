@@ -6,12 +6,15 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 import axios from "axios";
 import api from "../../../services/Api";
+import Cookies from "js-cookie";
+
 
 
 const Login = () => {
  
   const [getEmail, setGetEmail] = useState("")
   const [getPassword, setGetPassword] = useState("")
+  const [accessToken, setAccessToken]= useState()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,25 +22,19 @@ const Login = () => {
       email: getEmail,
       password: getPassword
     }
+    
+  
+ 
     api().post("/auth/login", data)
     .then((res)=>{
       console.log(res)
     })
-
-    // axios
-    //   .post("https://address-book-system.onrender.com/api/v1/auth/login", {
-    //     email: getEmail,
-    //     password: getPassword
-    //   })
       
   };
-  // const validateEmail = (email) => {
-  //   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  //   if (!emailRegex.test(email)) {
-  //     return "Invalid email address";
-  //   }
-  //   return "";
-  // };
+  let setting = browser.cookies.set(
+    {}               // object
+  )
+
   
 
 
@@ -52,16 +49,16 @@ const Login = () => {
 
         <form onSubmit={handleSubmit}>
           <h2>LOGIN</h2>
-          <input
+          <input 
             type="email"
-            placeholder="E-mail "
+            placeholder="E-mail... "
             className="email form-control"
             onChange={(e) => setGetEmail(e.target.value)}
             required
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Password..."
             className="password form-control"
             onChange={(e)=> setGetPassword(e.target.value)}
             required

@@ -25,9 +25,12 @@ input{
     width: 80%;
     height: 40px;
     margin-inline: auto;
-    border: none;
+    /* border: none; */
+    border: #E9E3B5 1px solid ;
     border-radius: 12px;
-    background-color: #E9E3B5;
+    /* background-color: #E9E3B5; */
+    padding: 5px;
+    padding-left: 20px;
 }
 .email{
     width: 80%;
