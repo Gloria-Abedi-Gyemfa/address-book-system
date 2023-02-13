@@ -16,26 +16,17 @@ const Login = () => {
   const [getPassword, setGetPassword] = useState("")
   const [accessToken, setAccessToken]= useState()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
       email: getEmail,
       password: getPassword
     }
     
-  
- 
-    api().post("/auth/login", data)
-    .then((res)=>{
-      console.log(res)
-    })
+    const res = await api().post("/auth/login", data)
+    console.log(res)
       
   };
-  let setting = browser.cookies.set(
-    {}               // object
-  )
-
-  
 
 
   return (

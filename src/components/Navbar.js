@@ -10,8 +10,8 @@ const Navbar = () => {
       <h1 className="logo">Velio</h1>
       <div className="searchbar" >
       
-      <input placeholder="search for contacts" className="search-input"/>
-      <BiSearchAlt/>
+      <input placeholder="search for contacts..." className="search-input"/>
+      <BiSearchAlt className="search-icon"/>
       </div>
       <div className="add">Add Contact</div>
     </nav>

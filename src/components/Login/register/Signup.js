@@ -1,45 +1,50 @@
 import React, { useState } from "react";
 import "./Login.css";
 import signup from "../../../images/signup.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import axios from "axios";
-import Login from "./Login";
 import api from "../../../services/Api";
+import { useCookies } from "react-cookie";
 
 const SignUp = () => {
   const [success, setSuccess] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [cookie, setCookie] = useCookies()
+  
 
+  let navigate = useNavigate();
   const handleSignup = (e) =>{
     e.preventDefault()
     const data ={
       email : email,
       password : password
     }
-    api().post("/auth/register", data)
-    .then(response => {
-      console.log(response.data)
-      setSuccess(response.data.success)
-    })
-    // .then(()=>{
-    //   if(data.message === 
-    //     "User created successfully"){
-    //       <Login/>
-    //     }
-    //     else{
-    //       console.log(data.message)
-    //     }
-    //   })
+    const result = api().post("/auth/register", data)
+    
+    
+      if(result.data.success){
+        // setSuccess ( navigate("/login"))
+        navigate("/login")
+         }
+        else{
+          // setSuccess = navigate("/signup")
+  
+        }
+      console.log(result.data)
+     
+  
+     
+    
     .catch(e => {
-      console.log(e);
+      console.error(e);
     });
   }
   
   return (
     <div>
-      {!success ? <div className="login">
+      { !success ?
+       <div className="login">
         <Link to="/startup">
           <IoMdArrowRoundBack />
         </Link>
@@ -68,7 +73,7 @@ const SignUp = () => {
             <Link className="alt_register link-danger" to="/login">Login</Link>
           </section>
         </form>
-      </div> : <Login/>}
+      </div> : null}
     </div>
   );
 };
