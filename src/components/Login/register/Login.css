@@ -56,7 +56,20 @@ input{
 .have-account{
     width: max-content;
     text-align: center;
-    /* margin: auto; */
     margin-left: -5%;
     
+}
+.success-message{
+    color: #f67f20;
+    font-weight: bolder;
+    width: max-content;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.validation{
+    width: 80%;
+    margin: auto;
+    margin-top: -25px;
+    margin-bottom: 25px ;
+    color: red;
 }
