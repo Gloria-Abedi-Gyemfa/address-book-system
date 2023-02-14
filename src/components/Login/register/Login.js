@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import login from "../../../images/login.jpg";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 import axios from "axios";
