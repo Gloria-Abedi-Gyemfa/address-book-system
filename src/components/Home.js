@@ -1,17 +1,30 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import AuthProvider from "../context/AuthProvider";
+import Recent from "./Recent";
+import Contacts from "./Contacts";
+import Edit from "./Edit";
 
 const Home = () => {
   return (
-    <div className="home-page">
+    <section className="home-page">
+      <header>
       <Navbar />
-      <div className="body">
-      <Sidebar />
-      </div>
+      </header>
       
-    </div>
+      <body className="body  row g-3">
+      <Sidebar/>
+      <section className="middle-col">
+        <Recent/>
+        <Contacts/>
+      </section>
+      <section className="last-col">
+        <Edit/>
+      </section>
+      
+      </body>
+      
+    </section>
   );
 };
 

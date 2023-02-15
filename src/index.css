@@ -6,19 +6,28 @@
 *{
   background-color: #F7F8FD;
 }
-
+.body{
+  width: 80vw;
+  align-content: center;
+  margin: auto;
+}
+header{
+  background-color: #ffff;
+}
 button {
   background-color: #f67f20;
   color: white;
   border: none;
 }
+
 nav{
   background-color: #ffff;
   height: 20vh;
   color: #f67f20;
   display: flex;
-  justify-content: space-around;
   align-content: center;
+  width: 80vw;
+  margin: auto;
   
   
 }
@@ -26,6 +35,13 @@ nav{
   height: max-content;
   background-color: #ffff;
   align-self: center;
+  font-size: 30px;
+  font-weight: bolder;
+  line-height: 35px;
+ 
+}
+.logo:hover{
+  cursor: pointer;
 }
 .add{
   height: max-content;
@@ -33,21 +49,90 @@ nav{
   background-color: #003048;
   color: #ffff;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   border-radius: 20px;
 }
+.add:hover{
+  cursor: pointer;
+}
 .searchbar{
+  margin-left: auto;
   background-color: #F7F8FD;
   height: fit-content;
   border: #003048 1px solid;
   display: flex;
   justify-content: space-between;
   align-self: center;
+  border-radius: 12px;
+  margin-right: 2%;
+}
+.searchbar:hover{
+  cursor: pointer;
 }
 .search-input{
   border: none;
-  background-color: #F7F8FD;
+
 }
+.search-input:focus{
+  outline: none;
+}
+.search-icon{
+  margin: auto;
+  margin-right: 10px;
+}
+.sidebar{
+  background-color:#ffff;
+  border-radius: 12px;
+  width: 200px;
+  
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 35px;
+  padding: 4% 7% 4% 4%;
+}
+.sidebar div{
+  background-color: #ffff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.sidebar div span{
+  background-color: #ffff;
+  margin-left: 10%;
+}
+
+.body{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+
+}
+.edit-page{
+  width: 250px;
+  background-color: #ffff;
+  border: none;
+  border-radius: 10px;
+}
+.edit-title{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffff;
+
+}
+.edit{
+  background-color: #ffff;
+}
+.edit-icon{
+  margin-block: auto;
+}
+.in{
+  border: none;
+  background-color: #ffff;
+}
+/* .last-col{
+  width: 150px;
+} */
 /*
 
 .side-bar {

@@ -1,59 +1,48 @@
 import React, { useState } from "react";
 import "./Login.css";
 import login from "../../../images/login.jpg";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
-
-import axios from "axios";
 import api from "../../../services/Api";
-// import Cookies from "js-cookie";
+import Api from "../../../services/Api";
 
 const Login = () => {
-  // const [getEmail, setGetEmail] = useState("")
-  // const [getPassword, setGetPassword] = useState("")
-  const [accessToken, setAccessToken] = useState();
-  const [values, setValues] = useState({
+ 
+  const [form, setForm] = useState({
     email: "",
-    password: "",
+    password: ""
   });
-  const handleEmail = (e) => {
-    setValues({ ...values, email: e.target.value });
-  };
-  const handlePassword = (e) => {
-    setValues({...values, password: e.target.value});
-  };
-  const [submitted, setSubmitted] = useState(false)
+  const navigate = useNavigate()
 
-  const [valid, setValid] = useState(false)
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      email: handleEmail,
-      password: handlePassword
-    };
-    api().post("/auth/login", data)
-      .then((res) => {
-        console.log(res);
-      });
-    if (values.email && values.password) {
-      setValid(true)
+    try {
+      const data = {
+        email: form.email,
+        password: form.password
+      }
+      const response = await api().post("/auth/login", data);
+
+      if(response.data.status === "success"){
+        setForm({email: "", password: ""});
+        navigate("/")
+      }else{
+        setForm({email: "", password: ""});
+      }
+
+      
+    } catch (error) {
+      console.error(Response)
+      
     }
-    setSubmitted(true)
-    
+      
   };
-  // let setting = browser.cookies.set(
-  //   {}               // object
-  // )
+
 
   return (
     <div>
       <div className="login">
-        <Link to="/startup">
-          <IoMdArrowRoundBack />
-        </Link>
-
-        <img src={login} className="login-image img-fluid" alt="login-vector" />
+        <img src={login} className="login-image" />
 
         <form onSubmit={handleSubmit}>
 
@@ -64,8 +53,9 @@ const Login = () => {
             type="email"
             placeholder="E-mail... "
             className="email form-control"
-            onChange={handleEmail}
-            
+            value={form.email}
+            onChange={(e) =>{ setForm({...form, email:e.target.value})}}
+            required
           />
           {submitted && !values.email ? <span className="validation">Please type your email</span> : null}
           <input
@@ -73,8 +63,9 @@ const Login = () => {
             type="password"
             placeholder="Password..."
             className="password form-control"
-            onChange={handlePassword}
-            
+            value={form.password}
+            onChange={(e)=> setForm({...form, password: e.target.value})}
+            required
           />
           {submitted && !values.password ? <span className="validation">Enter your Password</span> : null}
           <button type="submit">Login</button>

@@ -6,9 +6,9 @@ import {RiInformationLine} from "react-icons/ri"
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
-    const style = { color: " #F67F20", width:"27px", height:"25px" }
+    const style = { color: " #F67F20", width:"27px", height:"25px", backgroundColor:"#ffff" }
   return (
-    <div className='side-bar'>
+    <section className='sidebar'>
 
         <div><BiHome style={style} />
         <span>Home</span>
@@ -34,7 +34,7 @@ const Sidebar = () => {
         </div>
         
         
-    </div>
+    </section>
   )
 }
 
