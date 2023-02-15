@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import AuthProvider from "../context/AuthProvider";
 import Recent from "./Recent";
 import Contacts from "./Contacts";
 import Edit from "./Edit";

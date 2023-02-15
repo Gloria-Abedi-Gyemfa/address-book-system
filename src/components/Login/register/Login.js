@@ -1,30 +1,40 @@
 import React, { useState } from "react";
 import "./Login.css";
 import login from "../../../images/login.jpg";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
-
-import axios from "axios";
 import api from "../../../services/Api";
-import Cookies from "js-cookie";
-
-
+import Api from "../../../services/Api";
 
 const Login = () => {
  
-  const [getEmail, setGetEmail] = useState("")
-  const [getPassword, setGetPassword] = useState("")
-  const [accessToken, setAccessToken]= useState()
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  });
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      email: getEmail,
-      password: getPassword
+    try {
+      const data = {
+        email: form.email,
+        password: form.password
+      }
+      const response = await api().post("/auth/login", data);
+
+      if(response.data.status === "success"){
+        setForm({email: "", password: ""});
+        navigate("/")
+      }else{
+        setForm({email: "", password: ""});
+      }
+
+      
+    } catch (error) {
+      console.error(Response)
+      
     }
-    
-    const res = await api().post("/auth/login", data)
-    console.log(res)
       
   };
 
@@ -32,11 +42,7 @@ const Login = () => {
   return (
     <div>
       <div className="login">
-        <Link to="/startup">
-          <IoMdArrowRoundBack />
-        </Link>
-
-        <img src={login} className="login-image img-fluid" />
+        <img src={login} className="login-image" />
 
         <form onSubmit={handleSubmit}>
           <h2>LOGIN</h2>
@@ -44,14 +50,16 @@ const Login = () => {
             type="email"
             placeholder="E-mail... "
             className="email form-control"
-            onChange={(e) => setGetEmail(e.target.value)}
+            value={form.email}
+            onChange={(e) =>{ setForm({...form, email:e.target.value})}}
             required
           />
           <input
             type="password"
             placeholder="Password..."
             className="password form-control"
-            onChange={(e)=> setGetPassword(e.target.value)}
+            value={form.password}
+            onChange={(e)=> setForm({...form, password: e.target.value})}
             required
           />
           <button type="submit">Login</button>
