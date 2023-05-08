@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Password = ({ password, setPassword }) => {
+const PasswordInput = ({ password, setPassword }) => {
   return (
     <div className="input-container">
       <label>Password :</label>
@@ -15,4 +15,4 @@ const Password = ({ password, setPassword }) => {
   )
 }
 
-export default Password
+export default PasswordInput

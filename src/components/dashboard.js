@@ -1,8 +1,11 @@
 import React from 'react'
+import TextInput from './input/TextInput'
 
 const Dashboard = () => {
   return (
-    <section>welcome to the dashboard</section>
+    <div>
+      <TextInput/>
+    </div>
   )
 }
 

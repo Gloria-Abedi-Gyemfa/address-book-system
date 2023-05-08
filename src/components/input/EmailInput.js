@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Email = ({ email, setEmail }) => {
+const EmailInput = ({ email, setEmail }) => {
   return (
     <div className="input-container">
       <label>Email :</label>
@@ -15,4 +15,4 @@ const Email = ({ email, setEmail }) => {
   )
 }
 
-export default Email
+export default EmailInput

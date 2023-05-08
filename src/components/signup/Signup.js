@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import Alert from '../Alert'
-import Email from '../input/Email'
-import Login from '../login/Login'
+import Alert from '../feature/Alert'
 import Button from '../button/Button'
-import Password from '../input/Password'
+import EmailInput from '../input/EmailInput'
+import PasswordInput from '../input/PasswordInput'
 
 const Signup = () => {
   const [email, setEmail] = useState('')
@@ -68,11 +67,11 @@ const Signup = () => {
       {alert.show && <Alert type={alert.type} message={alert.message} />}
 
       <form onSubmit={handleSubmit}>
-        <section className="heading">Signup</section>
-        <section className="form-center">
-          <Email email={email} setEmail={setEmail} />
+        <h1 className="heading">Signup</h1>
+        
+          <EmailInput email={email} setEmail={setEmail} />
 
-          <Password password={password} setPassword={setPassword} />
+          <PasswordInput password={password} setPassword={setPassword} />
           <div className="form-group-first">
             <label>First Name:</label>
             <input
@@ -97,7 +96,7 @@ const Signup = () => {
           <div className="alt">
             <Link to="/">Login</Link>
           </div>
-        </section>
+      
       </form>
     </>
   )
