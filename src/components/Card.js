@@ -1,8 +1,12 @@
 import React from 'react'
+import Login from './login/Login'
+import Signup from './signup/Signup'
 
-const Card = () => {
+const Card = ({title}) => {
   return (
-    <div>Card</div>
+    <div className='card'>
+       <h1 className="heading">Signup</h1>
+    </div>
   )
 }
 

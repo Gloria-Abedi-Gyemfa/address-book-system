@@ -5,6 +5,7 @@ import Alert from '../feature/Alert'
 import Button from '../button/Button'
 import EmailInput from '../input/EmailInput'
 import PasswordInput from '../input/PasswordInput'
+import TextInput from '../input/TextInput'
 
 const Signup = () => {
   const [email, setEmail] = useState('')
@@ -66,32 +67,11 @@ const Signup = () => {
     <>
       {alert.show && <Alert type={alert.type} message={alert.message} />}
 
-      <form onSubmit={handleSubmit}>
-        <h1 className="heading">Signup</h1>
-        
+      <form onSubmit={handleSubmit}>        
           <EmailInput email={email} setEmail={setEmail} />
-
           <PasswordInput password={password} setPassword={setPassword} />
-          <div className="form-group-first">
-            <label>First Name:</label>
-            <input
-              name="name"
-              type="text"
-              value={firstName}
-              onChange={e => setFirstName(e.target.value)}
-              placeholder="e.g john"
-            />
-          </div>
-          <div className="form-group-last">
-            <label>Last Name:</label>
-            <input
-              name="name"
-              type="text"
-              value={lastName}
-              onChange={e => setLastName(e.target.value)}
-              placeholder="e.g Doe"
-            />
-          </div>
+          <TextInput label='First Name' />
+          <TextInput label='Last Name'/>
           <Button />
           <div className="alt">
             <Link to="/">Login</Link>

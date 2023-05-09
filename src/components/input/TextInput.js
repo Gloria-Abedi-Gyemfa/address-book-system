@@ -1,20 +1,23 @@
 import React, {useState} from 'react'
 
-const TextInput = () => {
+const TextInput = ({label}) => {
   const [characterCounter, setCharacterCounter] = useState('')
 
   
   return (
-    <section className='text-input'>
-      <h4>Add Comment</h4>
-      <textarea placeholder="Type your comment here" 
+    <div className='text-input'>
+      <label>{label}</label>
+      <input 
+      placeholder={label}
+      name={label}
+      type="text"
       onChange={e=>setCharacterCounter(e.target.value)}
       value={characterCounter}
       required
       maxLength='250'
-      ></textarea>
+      />
       <h4 className='danger'>{250 - characterCounter.length} characters left</h4>
-    </section>
+    </div>
     
   )
 }
