@@ -4,7 +4,7 @@ import TextInput from './input/TextInput'
 const Dashboard = () => {
   return (
     <div>
-      <TextInput/>
+      Welcome to the dashboard
     </div>
   )
 }

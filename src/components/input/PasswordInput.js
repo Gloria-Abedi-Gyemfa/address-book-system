@@ -10,6 +10,7 @@ const PasswordInput = ({ password, setPassword }) => {
         placeholder="Enter your password"
         value={password}
         onChange={e => setPassword(e.target.value)}
+        required
       />
     </div>
   )

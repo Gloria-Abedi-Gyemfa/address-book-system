@@ -6,12 +6,14 @@ import Button from '../button/Button'
 import EmailInput from '../input/EmailInput'
 import PasswordInput from '../input/PasswordInput'
 import TextInput from '../input/TextInput'
+import Card from '../Card'
 
 const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const title = 'Signup'
 
   const [alert, setAlert] = useState({
     show: false,
@@ -66,7 +68,7 @@ const Signup = () => {
   return (
     <>
       {alert.show && <Alert type={alert.type} message={alert.message} />}
-
+      <Card title={title}>
       <form onSubmit={handleSubmit}>        
           <EmailInput email={email} setEmail={setEmail} />
           <PasswordInput password={password} setPassword={setPassword} />
@@ -76,8 +78,8 @@ const Signup = () => {
           <div className="alt">
             <Link to="/">Login</Link>
           </div>
-      
       </form>
+      </Card>
     </>
   )
 }

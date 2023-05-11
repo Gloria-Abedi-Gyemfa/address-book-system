@@ -1,12 +1,13 @@
 import React from 'react'
-import Login from './login/Login'
-import Signup from './signup/Signup'
 
-const Card = ({title}) => {
+const Card = props => {
   return (
-    <div className='card'>
-       <h1 className="heading">Signup</h1>
-    </div>
+    <>
+      <div className="card">
+        <h1 className="heading">{props.title}</h1>
+        <section>{props.children}</section>
+      </div>
+    </>
   )
 }
 

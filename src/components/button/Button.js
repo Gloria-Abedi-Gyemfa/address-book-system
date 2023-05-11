@@ -6,7 +6,7 @@ const Button = () => {
     setLoader(true)
     setTimeout(() => {
       setLoader(false)
-    }, 3000)
+    }, 3500)
   }
   return (
     <>

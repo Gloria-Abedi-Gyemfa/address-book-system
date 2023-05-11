@@ -5,12 +5,14 @@ import EmailInput from '../input/EmailInput'
 import PasswordInput from '../input/PasswordInput'
 import Alert from '../feature/Alert'
 import Api from '../services/api'
+import Card from '../Card'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [alert, setAlert] = useState({ show: false, message: '', type: '' })
   const navigate = useNavigate()
+  const title = 'Login'
   
 
   const handleSubmit = async e => {
@@ -45,6 +47,7 @@ const Login = () => {
   return (
     <>
       {alert.show && <Alert message={alert.message} type={alert.type} />}
+      <Card title={title}>
       <form onSubmit={handleSubmit}>
           <EmailInput email={email} setEmail={setEmail} />
           <PasswordInput password={password} setPassword={setPassword} />
@@ -53,6 +56,7 @@ const Login = () => {
           <Link to="/signup">Signup</Link>
         </div>
       </form>
+      </Card>
     </>
   )
 }
