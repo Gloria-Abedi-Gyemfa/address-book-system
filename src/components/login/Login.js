@@ -12,9 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [alert, setAlert] = useState({ show: false, message: '', type: '' })
   const navigate = useNavigate()
-  const title = 'Login'
   
-
   const handleSubmit = async e => {
     e.preventDefault()
     try {
@@ -47,11 +45,11 @@ const Login = () => {
   return (
     <>
       {alert.show && <Alert message={alert.message} type={alert.type} />}
-      <Card title={title}>
+      <Card title='Login'>
       <form onSubmit={handleSubmit}>
-          <EmailInput email={email} setEmail={setEmail} />
-          <PasswordInput password={password} setPassword={setPassword} />
-        <Button />
+        <EmailInput email={email} setEmail={setEmail} />
+        <PasswordInput password={password} setPassword={setPassword} />
+        <Button variant = 'primary' size='large' text='submit'/>
         <div className="alt">
           <Link to="/signup">Signup</Link>
         </div>

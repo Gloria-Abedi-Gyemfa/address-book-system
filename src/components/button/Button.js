@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
-const Button = () => {
+const Button = ({variant, size, text}) => {
   const [loader, setLoader] = useState(false)
-  const hanleClick = () => {
+  const [disable, setDisable] = useState(true)
+  const handleClick = () => {
     setLoader(true)
     setTimeout(() => {
       setLoader(false)
@@ -10,13 +11,13 @@ const Button = () => {
   }
   return (
     <>
-      <button type="submit" className="btn" onClick={hanleClick}>
+      <button type="submit"  onClick={handleClick} className={`${variant} ${size}`} >
         {loader ? (
           <div className="loader-container">
             <div className="loader"></div>
           </div>
         ) : (
-          'submit'
+          text
         )}
       </button>
     </>

@@ -11,9 +11,6 @@ import Card from '../Card'
 const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const title = 'Signup'
 
   const [alert, setAlert] = useState({
     show: false,
@@ -23,15 +20,11 @@ const Signup = () => {
   const navigate = useNavigate()
   const handleSubmit = async e => {
     e.preventDefault()
+    const data = new FormData(e.target)
     try {
       const response = await axios.post(
         `https://address-book-system.onrender.com/api/v1/auth/register`,
-        {
-          email,
-          password,
-          firstName,
-          lastName,
-        }
+        Object.fromEntries(data.entries())
       )
       if (response.data.success) {
         setAlert({
@@ -68,13 +61,13 @@ const Signup = () => {
   return (
     <>
       {alert.show && <Alert type={alert.type} message={alert.message} />}
-      <Card title={title}>
+      <Card title = 'Signup'>
       <form onSubmit={handleSubmit}>        
           <EmailInput email={email} setEmail={setEmail} />
           <PasswordInput password={password} setPassword={setPassword} />
-          <TextInput label='First Name' />
-          <TextInput label='Last Name'/>
-          <Button />
+          <TextInput label='First Name'  validationMessage='cannot include special characters'/>
+          <TextInput label='Last Name' validationMessage={`cannot include special characters`}/>
+          <Button variant = 'primary' size='large' text='submit'/>
           <div className="alt">
             <Link to="/">Login</Link>
           </div>
