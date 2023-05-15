@@ -1,23 +1,24 @@
 import React from 'react'
 
-const EmailInput = ({ email, setEmail }) => {
+const EmailInput = ({ email, setEmail, label }) => {
 
   return (
     <>
-      <label>Email :</label>
+      <label>{label} :</label>
       <div>
         <input
-          name="email"
-          type="email"
-          placeholder="Enter your email"
+          name={email}
+          type={email}
+          placeholder={`Enter your ${label}`}
           value={email}
           onChange={e => setEmail(e.target.value)}
           onFocus={e=>e.target.placeholder = ''}
-          onBlur={e=>e.target.placeholder = "Enter your email"}
+          onBlur={e=>e.target.placeholder = {label}}
           required
         />
       </div>
-      <div className='danger validationMessage'>Enter a valid email</div>
+      
+      <div className='danger validationMessage valis'>Enter a valid email</div>
     </>
   )
 }

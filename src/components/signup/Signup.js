@@ -37,7 +37,6 @@ const Signup = () => {
         }, 2000)
       }
       navigate('/dashboard')
-      console.log(response.data.message)
     } catch (error) {
       setAlert({
         show: true,
@@ -48,7 +47,6 @@ const Signup = () => {
         setAlert({ show: false })
       }, 2000)
       navigate('/signup')
-      console.log(error)
     }
   }
 
@@ -63,8 +61,8 @@ const Signup = () => {
       {alert.show && <Alert type={alert.type} message={alert.message} />}
       <Card title = 'Signup'>
       <form onSubmit={handleSubmit}>        
-          <EmailInput email={email} setEmail={setEmail} />
-          <PasswordInput password={password} setPassword={setPassword} />
+          <EmailInput email={email} setEmail={setEmail} label='Email'/>
+          <PasswordInput password={password} setPassword={setPassword} label='Password' />
           <TextInput label='First Name'  validationMessage='cannot include special characters'/>
           <TextInput label='Last Name' validationMessage={`cannot include special characters`}/>
           <Button variant = 'primary' size='large' text='submit'/>

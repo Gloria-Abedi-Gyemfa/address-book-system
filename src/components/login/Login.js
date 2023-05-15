@@ -10,14 +10,17 @@ import Card from '../Card'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loader, setLoader] = useState(false)
+
   const [alert, setAlert] = useState({ show: false, message: '', type: '' })
   const navigate = useNavigate()
   
   const handleSubmit = async e => {
-    e.preventDefault()
+    e.preventDefault()    
     try {
-      let response = await Api.post('/login', { email, password })
+      let response = await Api.post('/login', {email, password})
       if (response.data.success) {
+        setLoader(true)
         setAlert({
           show: true,
           message: response.data.message,
@@ -25,11 +28,12 @@ const Login = () => {
         })
         setTimeout(() => {
           setAlert({ show: false })
+          setLoader(false)
         }, 4000)
       }
       navigate('/dashboard')
     } catch (error) {
-      console.error(JSON.stringify(error.response.data.message))
+      setLoader(true)
       setAlert({
         show: true,
         message: JSON.stringify(error.response.data.message),
@@ -37,6 +41,7 @@ const Login = () => {
       })
       setTimeout(() => {
         setAlert({ show: false })
+        setLoader(false)
       }, 4000)
       navigate('/')
     }
@@ -47,9 +52,9 @@ const Login = () => {
       {alert.show && <Alert message={alert.message} type={alert.type} />}
       <Card title='Login'>
       <form onSubmit={handleSubmit}>
-        <EmailInput email={email} setEmail={setEmail} />
-        <PasswordInput password={password} setPassword={setPassword} />
-        <Button variant = 'primary' size='large' text='submit'/>
+        <EmailInput email={email} setEmail={setEmail} name={email} label='Email'/>
+        <PasswordInput password={password} setPassword={setPassword} name={password} label='Password'/>
+        <Button variant = 'primary' size='large' text='submit'loader={loader} setLoader={setLoader} handleSubmit={handleSubmit}/>
         <div className="alt">
           <Link to="/signup">Signup</Link>
         </div>

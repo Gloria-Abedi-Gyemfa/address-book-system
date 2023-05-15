@@ -11,7 +11,7 @@
   --green-color: #014e56;
   --light-green: #aeefae;
   --pink: #f67e7e;
-  --white: #fff;
+  --white: #ffffff;
   --dark-green: #004047;
   --light-navy: #487074;
 
@@ -66,6 +66,7 @@ label {
 h2 {
   margin: auto;
 }
+
 input {
   font-size: 0.94rem;
   padding: 0.5rem 0.8rem;
@@ -79,6 +80,20 @@ input {
 }
 input::placeholder{
   font-size: 0.6rem;
+}
+
+input:focus:invalid {
+  outline: 2px solid var(--pink);
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  outline: 2px solid var(--pink);
+}
+input:focus:valid {
+  outline: 2px solid var(--light-green);
+}
+input:not(:focus):not(:placeholder-shown):valid{
+  outline: 2px solid var(--light-green);
 }
 
  button {
@@ -167,15 +182,13 @@ input::placeholder{
 .danger {
   color: var(--pink);
 }
-.validationMessage{
-  display: none;
-}
-input:empty{
+
+/* input:empty{
   outline: none;
 }
 input:invalid {
   outline: 2px solid var(--pink);
-}
+} */
 a {
   text-decoration: none;
   color: var(--orange-color);
