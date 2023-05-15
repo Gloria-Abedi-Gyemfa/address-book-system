@@ -1,8 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-const TextInput = ({label, validationMessage}) => {
-  const [characterCounter, setCharacterCounter] = useState('')
-
+const TextInput = ({label, setName, name}) => {
   
   return (
     <>
@@ -12,15 +10,15 @@ const TextInput = ({label, validationMessage}) => {
       placeholder={label}
       name={label}
       type="text"
-      onChange={e=>setCharacterCounter(e.target.value)}
-      value={characterCounter}
+      onChange={e=>setName(e.target.value)}
+      value={name}
       onFocus={e=>e.target.placeholder = ''}
       onBlur={e=>e.target.placeholder=`${label}`}
       minLength='5'
       required
       />
+      <span>Enter valid name</span>
     </div>
-    <span className='danger validationMessage'>{validationMessage}</span>
     </>
       
     

@@ -6,8 +6,8 @@ const PasswordInput = ({ password, setPassword, label }) => {
     <label>{label} :</label>
       <div>
         <input
-        name={password}
-        type={password}
+        name={label}
+        type={label}
         placeholder={`Enter your ${label}`}
         value={password}
         onChange={e => setPassword(e.target.value)}
@@ -15,8 +15,9 @@ const PasswordInput = ({ password, setPassword, label }) => {
         onBlur={e=>e.target.placeholder = {label}}
         required
       />
+      <span>Password must be <br/>8-20 characters</span>
     </div>
-    <div className='danger validationMessage'>Must be 8-20 characters<br/>must include special characters</div>
+    
     </>
       
   )
