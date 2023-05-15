@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({variant, size, text, loader, setLoader, handleSubmit}) => {
+const Button = ({variant, size, text, loader, handleSubmit}) => {
   
   return (
     <>
@@ -10,7 +10,7 @@ const Button = ({variant, size, text, loader, setLoader, handleSubmit}) => {
             <div className="loader"></div>
           </div>
         ) : (
-          {text}
+          <>{text}</>
         )}
       </button>
     </>

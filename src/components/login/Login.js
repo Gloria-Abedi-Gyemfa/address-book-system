@@ -13,12 +13,14 @@ const Login = () => {
   const [loader, setLoader] = useState(false)
 
   const [alert, setAlert] = useState({ show: false, message: '', type: '' })
+  
   const navigate = useNavigate()
   
   const handleSubmit = async e => {
-    e.preventDefault()    
+    e.preventDefault()
+    const data = new FormData(e.target)    
     try {
-      let response = await Api.post('/login', {email, password})
+      let response = await Api.post('/login', Object.fromEntries(data.entries()))
       if (response.data.success) {
         setLoader(true)
         setAlert({
@@ -46,6 +48,10 @@ const Login = () => {
       navigate('/')
     }
   }
+
+  // const handleValidation = () =>{
+  //   const error = ''
+  // }
 
   return (
     <>

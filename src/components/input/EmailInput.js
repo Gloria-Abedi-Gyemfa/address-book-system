@@ -1,6 +1,11 @@
 import React from 'react'
+import { useState } from 'react'
 
 const EmailInput = ({ email, setEmail, label }) => {
+  const [error, setError] = useState(true)
+  if(email.trim() !== ''){
+    setError(false)
+  }
 
   return (
     <>
@@ -17,8 +22,8 @@ const EmailInput = ({ email, setEmail, label }) => {
           required
         />
       </div>
+      {error && <div className='danger validationMessage valis'>Enter a valid email</div>}
       
-      <div className='danger validationMessage valis'>Enter a valid email</div>
     </>
   )
 }
