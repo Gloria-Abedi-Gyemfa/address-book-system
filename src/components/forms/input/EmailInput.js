@@ -1,10 +1,11 @@
 import React from 'react'
+import inputStyles from './Input.module.css'
 
 const EmailInput = ({ email, setEmail, label }) => {
 
   return (
     <>
-      <label>{label} :</label>
+      <label className={inputStyles.label}>{label} :</label>
       <div>
         <input
           name={label}
@@ -14,9 +15,10 @@ const EmailInput = ({ email, setEmail, label }) => {
           onChange={e => setEmail(e.target.value)}
           onFocus={e=>e.target.placeholder = ''}
           onBlur={e=>e.target.placeholder = 'Enter your Email'}
+          className={inputStyles.input}
           required
         />
-        <span>enter a valid email</span>
+        <span className={inputStyles.alert}>enter a valid email</span>
       </div>
       
     </>

@@ -1,0 +1,10 @@
+.alt {
+    margin: auto;
+    margin-top: 1.4rem;
+    color: var(--pink);
+  }
+  .form {
+    width: max-content;
+    display: flex;
+    flex-direction: column; 
+  }

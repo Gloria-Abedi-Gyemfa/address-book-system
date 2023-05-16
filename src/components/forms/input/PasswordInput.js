@@ -1,9 +1,10 @@
 import React from 'react'
+import inputStyles from './Input.module.css'
 
 const PasswordInput = ({ password, setPassword, label }) => {
   return (
     <>
-    <label>{label} :</label>
+    <label className={inputStyles.label}>{label} :</label>
       <div>
         <input
         name={label}
@@ -12,10 +13,11 @@ const PasswordInput = ({ password, setPassword, label }) => {
         value={password}
         onChange={e => setPassword(e.target.value)}
         onFocus={e=>e.target.placeholder = ''}
-        onBlur={e=>e.target.placeholder = {label}}
+        onBlur={e=>e.target.placeholder = 'Enter your password'}
+        className={inputStyles.input}
         required
       />
-      <span>Password must be <br/>8-20 characters</span>
+      <span className={inputStyles.alert}>Password must be <br/>8-20 characters</span>
     </div>
     
     </>

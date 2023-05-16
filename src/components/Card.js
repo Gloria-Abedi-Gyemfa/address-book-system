@@ -1,11 +1,12 @@
 import React from 'react'
+import authStyles from './services/authLayout.module.css'
 
 const Card = ({title, children}) => {
   return (
     <>
-      <div className="card">
-        <h1 className="heading">{title}</h1>
-        <section>{children}</section>
+      <div className={authStyles.Card}>
+        <h1 className={authStyles.title}>{title}</h1>
+        <div>{children}</div>
       </div>
     </>
   )

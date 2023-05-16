@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import Alert from '../feature/Alert'
-import Button from '../button/Button'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import Button from '../../button/Button'
 import EmailInput from '../input/EmailInput'
 import PasswordInput from '../input/PasswordInput'
 import TextInput from '../input/TextInput'
-import Card from '../Card'
 
-const SignupForm = ({ email, }) => {
+const SignupForm = ({ handleSubmit }) => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
+  const [loader, setLoader] = useState(false)
 
   return (
     <>

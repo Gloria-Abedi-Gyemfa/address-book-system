@@ -1,9 +1,12 @@
 import React from 'react'
+import authStyles from './authLayout.module.css'
 
-const authLayout = () => {
+const AuthLayout = ({Children}) => {
   return (
-    <div></div>
+    <>
+    <div className={authStyles.card}>{Children}</div>
+    </>
   )
 }
 
-export default authLayout
+export default AuthLayout

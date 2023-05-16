@@ -1,0 +1,77 @@
+ :global button {
+    color: var(--white);
+    font-family: Livvic;
+    
+    font-weight: 600;
+    line-height: 28px;
+  
+    /* border-radius: 0.875rem; */
+    cursor: pointer;
+    margin: auto;
+    margin-top: 1.8rem;
+    
+  }
+ .large{
+    padding: 0.6rem 2rem;
+    font-size: 1.1rem;
+  }
+.small{
+    padding: 0.4rem 1.2rem;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    border-radius: 1.5rem;
+  }
+.normal{
+    padding: 0.5rem 1.8rem;
+    font-size: 1.125rem;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    font-style: normal;
+  }
+.primary{
+    border: none;
+    background-color: var(--dark-green);
+    border-top: 2px solid var(--light-navy);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+       var(--green-color) 0px -3px 0px inset;
+  
+  }
+.secondary{
+    border: none;
+    background-color: white;
+    border-top: 2px solid var(--light-navy);
+    color: var(--dark-green);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+       var(--green-color) 0px -3px 0px inset;
+  }
+.tertiary{
+    background-color: var(--pink);
+    border: 2.5px solid var(--light-navy);
+    color: var(--green-color);
+  }
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #014e56;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+ 

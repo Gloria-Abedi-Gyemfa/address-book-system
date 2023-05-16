@@ -1,11 +1,12 @@
 import React from 'react'
+import inputStyles from './Input.module.css'
 
 const TextInput = ({label, setName, name}) => {
   
   return (
     <>
-    <label>{label}</label>
-      <div className='text-input'>
+    <label className={inputStyles.label}>{label}</label>
+      <div className={inputStyles.textInput}>
       <input 
       placeholder={label}
       name={label}
@@ -15,9 +16,10 @@ const TextInput = ({label, setName, name}) => {
       onFocus={e=>e.target.placeholder = ''}
       onBlur={e=>e.target.placeholder=`${label}`}
       minLength='5'
+      className={inputStyles.input}
       required
       />
-      <span>Enter valid name</span>
+      <span className={inputStyles.alert}>Enter valid name</span>
     </div>
     </>
       

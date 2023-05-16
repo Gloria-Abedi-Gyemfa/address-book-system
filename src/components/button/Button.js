@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './button.module.css'
 
 const Button = ({variant, size, text, loader, handleSubmit}) => {
   
@@ -6,8 +7,8 @@ const Button = ({variant, size, text, loader, handleSubmit}) => {
     <>
       <button type="submit"  onClick={handleSubmit} className={`${variant} ${size}`} >
         {loader ? (
-          <div className="loader-container">
-            <div className="loader"></div>
+          <div className={styles.loaderCcontainer}>
+            <div className={styles.loader}></div>
           </div>
         ) : (
           <>{text}</>
