@@ -4,16 +4,14 @@
     
     font-weight: 600;
     line-height: 28px;
-  
-    /* border-radius: 0.875rem; */
     cursor: pointer;
-    margin: auto;
-    margin-top: 1.8rem;
-    
+    margin: auto;   
   }
  .large{
     padding: 0.6rem 2rem;
     font-size: 1.1rem;
+    width: 100%;
+    border-radius: 0.5rem;
   }
 .small{
     padding: 0.4rem 1.2rem;
@@ -32,19 +30,12 @@
   }
 .primary{
     border: none;
-    background-color: var(--dark-green);
-    border-top: 2px solid var(--light-navy);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-       var(--green-color) 0px -3px 0px inset;
-  
+    background-color: var(--dark-green);  
   }
 .secondary{
     border: none;
     background-color: white;
-    border-top: 2px solid var(--light-navy);
     color: var(--dark-green);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-       var(--green-color) 0px -3px 0px inset;
   }
 .tertiary{
     background-color: var(--pink);

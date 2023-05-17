@@ -1,10 +1,11 @@
 .alt {
     margin: auto;
     margin-top: 1.4rem;
-    color: var(--pink);
+    text-align: center;
   }
-  .form {
-    width: max-content;
-    display: flex;
-    flex-direction: column; 
+  .alt ~ a{
+    margin-top: 1.4rem;
+  }
+  :global form{
+    margin-top: 2rem;
   }

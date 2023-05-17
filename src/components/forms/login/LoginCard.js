@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Card from '../../Card'
+import Card from '../../card/Card'
 import LoginForm from './LoginForm'
 import Alert from '../../alert/Alert'
 import Api from '../../services/api'

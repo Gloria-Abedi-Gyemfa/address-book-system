@@ -5,8 +5,8 @@ const EmailInput = ({ email, setEmail, label }) => {
 
   return (
     <>
-      <label className={inputStyles.label}>{label} :</label>
-      <div>
+      <label className={`${inputStyles.label}`}>{label} :</label>
+      <div className={inputStyles.inputWrapper}>
         <input
           name={label}
           type={label}

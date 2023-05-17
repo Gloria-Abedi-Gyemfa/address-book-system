@@ -1,10 +1,10 @@
 import React from 'react'
 import authStyles from './authLayout.module.css'
 
-const AuthLayout = ({Children}) => {
+const AuthLayout = ({children}) => {
   return (
     <>
-    <div className={authStyles.card}>{Children}</div>
+    <div className={authStyles.card}>{children}</div>
     </>
   )
 }

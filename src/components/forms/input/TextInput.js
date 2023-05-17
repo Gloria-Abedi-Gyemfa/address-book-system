@@ -6,7 +6,7 @@ const TextInput = ({label, setName, name}) => {
   return (
     <>
     <label className={inputStyles.label}>{label}</label>
-      <div className={inputStyles.textInput}>
+      <div className={inputStyles.inputWrapper}>
       <input 
       placeholder={label}
       name={label}

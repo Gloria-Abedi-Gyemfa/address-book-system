@@ -5,7 +5,7 @@ const PasswordInput = ({ password, setPassword, label }) => {
   return (
     <>
     <label className={inputStyles.label}>{label} :</label>
-      <div>
+      <div className={inputStyles.inputWrapper}>
         <input
         name={label}
         type={label}

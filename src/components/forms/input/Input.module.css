@@ -1,6 +1,5 @@
 .label {
     font-weight: 700;
-    margin-bottom: 0.2rem;
     margin-top: 1.8rem;
     color: var(--green-color);
   }
@@ -12,6 +11,10 @@
     background-color: whitesmoke;
     border: none;
     color: var(--dark-green);
+}
+.inputWrapper{
+    margin-top: 0.2rem;
+    margin-bottom: 1.8rem;
 }
 .input::placeholder{
     font-size: 0.9rem;

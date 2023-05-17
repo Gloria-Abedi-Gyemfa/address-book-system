@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Alert from '../../alert/Alert'
 import SignupForm from './SignupForm'
-import Card from '../../Card'
+import Card from '../../card/Card'
 
 const SignupCard = () => {
   const [alert, setAlert] = useState({

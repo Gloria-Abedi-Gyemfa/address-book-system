@@ -22,15 +22,7 @@ body {
   background-color: var(--light-grey);
   font-family: 'Livvic';
 }
-h1,
-h2,
-h3,
-.heading {
-  color: var(--dark-blue);
-  font-weight: 700;
-  font-size: 1.9rem;
-}
-h4,
+
 p {
   font-size: 1rem;
   color: var(--white);

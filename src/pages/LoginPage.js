@@ -4,9 +4,9 @@ import LoginCard from '../components/forms/login/LoginCard'
 
 const LoginPage = () => {
   return (
-    // <AuthLayout>
+    <AuthLayout>
         <LoginCard/>
-    // </AuthLayout>
+     </AuthLayout>
   )
 }
 
