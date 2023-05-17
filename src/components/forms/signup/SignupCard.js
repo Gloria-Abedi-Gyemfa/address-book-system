@@ -6,11 +6,8 @@ import SignupForm from './SignupForm'
 import Card from '../../card/Card'
 
 const SignupCard = () => {
-  const [alert, setAlert] = useState({
-    show: false,
-    type: 'success',
-    message: '',
-  })
+  const [loader, setLoader] = useState(false)
+  const [alert, setAlert] = useState({show: false, type: '', message: '' })
 
   const navigate = useNavigate()
   // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -32,6 +29,7 @@ const SignupCard = () => {
             type: 'success',
             message: response.data.message,
           })
+          setLoader(true)
           setTimeout(() => {
             setAlert({ show: false })
           }, 2000)
@@ -43,6 +41,7 @@ const SignupCard = () => {
           type: 'error',
           message: error.response.data.message,
         })
+        setLoader(true)
         setTimeout(() => {
           setAlert({ show: false })
         }, 2000)
@@ -62,7 +61,7 @@ const SignupCard = () => {
     <>
       {alert.show && <Alert type={alert.type} message={alert.message} />}
       <Card title = 'Signup'>
-      <SignupForm handleSubmit={handleSubmit}/>
+      <SignupForm handleSubmit={handleSubmit} loader={loader}/>
       </Card>
     </>
   )

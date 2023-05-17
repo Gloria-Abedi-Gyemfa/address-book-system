@@ -10,7 +10,6 @@ const SignupForm = ({ handleSubmit }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
-  const [loader, setLoader] = useState(false)
 
   return (
     <>
