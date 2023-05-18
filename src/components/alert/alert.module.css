@@ -1,0 +1,22 @@
+.alert {
+    font-size: 1.88rem;
+    font-weight: lighter;
+  }
+.successful {
+    width: 70%;
+    background-color: var(--light-green);
+    margin: auto;
+    padding: 1.2rem 1.4rem;
+    color: #28bc28;
+    border-radius: 0.6rem;
+    font-size: 1.125rem;
+  }
+.unsuccessful {
+    width: 60%;
+    margin: auto;
+    padding: 1.2rem 1.4rem;
+    color: rgb(222, 62, 62);
+    border-radius: 0.6rem;
+    background-color: rgb(230, 165, 165);
+    font-size: 1.125rem;
+  }

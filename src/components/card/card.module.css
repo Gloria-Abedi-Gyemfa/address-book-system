@@ -1,0 +1,11 @@
+.heading {
+    color: var(--white);
+    margin: auto;
+    background-color: #004047;
+    border-bottom-left-radius: 0.875rem;
+    border-bottom-right-radius: 0.875rem;
+    text-align: center;
+    padding: 0.88rem 0;
+    font-weight: 700;
+    font-size: 1.9rem;
+  }

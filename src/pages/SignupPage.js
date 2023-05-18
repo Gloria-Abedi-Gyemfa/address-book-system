@@ -1,8 +1,14 @@
 import React from 'react'
+import AuthLayout from '../components/services/authLayout'
+import SignupCard from '../components/forms/signup/SignupCard'
 
 const SignupPage = () => {
   return (
-    <div>SignupPage</div>
+    <>
+    <AuthLayout>
+      <SignupCard />
+    </AuthLayout>
+    </>
   )
 }
 
