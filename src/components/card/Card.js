@@ -4,7 +4,7 @@ import cardStyles from './card.module.css'
 const Card = ({title, children}) => {
   return (
     <>
-      <div className={cardStyles.card}>
+      <div>
         <h1 className={cardStyles.heading}>{title}</h1>
         <div>{children}</div>
       </div>

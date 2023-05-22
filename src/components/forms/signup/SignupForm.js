@@ -10,6 +10,7 @@ const SignupForm = ({ handleSubmit }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+  const [loader, setLoader] = useState(false)
 
   return (
     <>
@@ -20,7 +21,9 @@ const SignupForm = ({ handleSubmit }) => {
           <TextInput label='Last Name' setName={setName} name={name}/>
           <Button variant = 'primary' size='large' text='submit' loader={loader} />
           <div className={formStyles.alt}>
-            <Link to="/">Login</Link>
+            <Link to="/">
+              <Button variant='secondary' size='large' text='Login'/>
+            </Link>
           </div>
       </form>
     </>

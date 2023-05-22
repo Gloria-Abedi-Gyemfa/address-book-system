@@ -14,9 +14,9 @@ const LoginForm = ({handleSubmit, loader}) => {
         <EmailInput email={email} setEmail={setEmail} label='Email'/>
         <PasswordInput password={password} setPassword={setPassword} name={password} label='Password'/>
         <Button variant = 'primary' size='large' text='submit' loader={loader}/>
-        <div className={formStyles.alt}>
-          <Link to="signup">Signup</Link>
-        </div>
+        <Link to="signup">
+          <Button variant='secondary' size='large' text='Signup' />
+        </Link>
       </form>
       
   )

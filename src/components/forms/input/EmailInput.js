@@ -18,7 +18,7 @@ const EmailInput = ({ email, setEmail, label }) => {
           className={inputStyles.input}
           required
         />
-        <span className={inputStyles.alert}>enter a valid email</span>
+        <div className={inputStyles.alert}>enter a valid email</div>
       </div>
       
     </>
