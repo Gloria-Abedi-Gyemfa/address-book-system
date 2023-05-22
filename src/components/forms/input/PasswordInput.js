@@ -17,7 +17,7 @@ const PasswordInput = ({ password, setPassword, label }) => {
         className={inputStyles.input}
         required
       />
-      <span className={inputStyles.alert}>Password must be <br/>8-20 characters</span>
+      <div className={inputStyles.alert}>Password must be <br/>8-20 characters</div>
     </div>
     
     </>

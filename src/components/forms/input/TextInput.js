@@ -19,7 +19,7 @@ const TextInput = ({label, setName, name}) => {
       className={inputStyles.input}
       required
       />
-      <span className={inputStyles.alert}>Enter valid name</span>
+      <div className={inputStyles.alert}>Enter valid name</div>
     </div>
     </>
       
