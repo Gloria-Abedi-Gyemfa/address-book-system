@@ -6,7 +6,7 @@ import PasswordInput from '../input/PasswordInput'
 import TextInput from '../input/TextInput'
 import formStyles from '../forms.module.css'
 
-const SignupForm = ({ handleSubmit }) => {
+const SignupForm = ({ handleSubmit, loader }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
@@ -18,10 +18,11 @@ const SignupForm = ({ handleSubmit }) => {
           <PasswordInput password={password} setPassword={setPassword} label='Password' />
           <TextInput label='First Name'  setName={setName} name={name} />
           <TextInput label='Last Name' setName={setName} name={name}/>
-          <Button variant = 'primary' size='large' text='submit' loader={loader} />
-          <div className={formStyles.alt}>
-            <Link to="/">Login</Link>
-          </div>
+          <Button variant = 'primary' size='large' text='submit' loader={loader}/>
+          <p className={formStyles.alt}>or</p>
+          <Link to="/" >
+            <Button variant='secondary' size='large' text='Login' />
+          </Link>         
       </form>
     </>
   )
