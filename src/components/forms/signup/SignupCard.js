@@ -10,9 +10,6 @@ const SignupCard = () => {
   const [alert, setAlert] = useState({show: false, type: '', message: '' })
 
   const navigate = useNavigate()
-  // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  // const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/
-  // const namePattern = /^[a-zA-Z]+$/
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -32,6 +29,7 @@ const SignupCard = () => {
           setLoader(true)
           setTimeout(() => {
             setAlert({ show: false })
+            setLoader(false)
           }, 2000)
         }
         navigate('/dashboard')
@@ -44,6 +42,7 @@ const SignupCard = () => {
         setLoader(true)
         setTimeout(() => {
           setAlert({ show: false })
+          setLoader(false)
         }, 2000)
         navigate('/signup')
       }
