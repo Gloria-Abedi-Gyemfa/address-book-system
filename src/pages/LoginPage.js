@@ -4,15 +4,15 @@ import LoginCard from '../components/forms/login/LoginCard'
 import Alert from '../components/alert/Alert'
 
 const LoginPage = () => {
-  const [alert, setAlert] = useState({ show: false, message: '', type: '' })
-  const handleAlert = (value)=>{
-    setAlert(value)
-  }
+  // const [alert, setAlert] = useState({ show: false, message: '', type: '' })
+  // const handleAlert = (value)=>{
+  //   setAlert(value)
+  // }
   return (
     <>
-    {alert.show && <Alert type={alert.type} message={alert.message} />}
+    {/* {alert.show && <Alert type={alert.type} message={alert.message} />} */}
     <AuthLayout>
-        <LoginCard onAlert={handleAlert}/>
+        <LoginCard />
      </AuthLayout>
     </>
   )

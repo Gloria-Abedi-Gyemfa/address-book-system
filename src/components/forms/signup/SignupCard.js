@@ -4,6 +4,7 @@ import axios from 'axios'
 import Alert from '../../alert/Alert'
 import SignupForm from './SignupForm'
 import Card from '../../card/Card'
+import Cookies from 'js-cookie'
 
 const SignupCard = () => {
   const [loader, setLoader] = useState(false)
@@ -14,6 +15,7 @@ const SignupCard = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     const data = new FormData(e.target)
+    console.log(data);
     
       try {
         const response = await axios.post(
@@ -32,6 +34,7 @@ const SignupCard = () => {
             setLoader(false)
           }, 2000)
         }
+        Cookies.set('userToken', response.data.access_token)
         navigate('/dashboard')
       } catch (error) {
         setAlert({
