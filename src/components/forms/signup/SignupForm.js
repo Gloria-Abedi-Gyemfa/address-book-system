@@ -7,13 +7,11 @@ import TextInput from '../input/TextInput'
 import formStyles from '../forms.module.css'
 
 const SignupForm = ({ handleSubmit, loader }) => {
-const SignupForm = ({ handleSubmit, loader }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+
 
   return (
     <>
