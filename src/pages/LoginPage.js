@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
+import React, {useState} from 'react'
 import AuthLayout from '../components/services/authLayout'
 import LoginCard from '../components/forms/login/LoginCard'
+import Alert from '../components/alert/Alert'
 import Alert from '../components/alert/Alert'
 
 const LoginPage = () => {
@@ -10,9 +12,8 @@ const LoginPage = () => {
   }
   return (
     <>
-    {alert.show && <Alert type={alert.type} message={alert.message} />}
     <AuthLayout>
-        <LoginCard onAlert={handleAlert}/>
+        <LoginCard />
      </AuthLayout>
     </>
   )
