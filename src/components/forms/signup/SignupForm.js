@@ -9,16 +9,16 @@ import formStyles from '../forms.module.css'
 const SignupForm = ({ handleSubmit, loader }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [name, setName] = useState('')
-  const [loader, setLoader] = useState(false)
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
 
   return (
     <>
       <form onSubmit={handleSubmit}>        
           <EmailInput email={email} setEmail={setEmail} label='Email'/>
           <PasswordInput password={password} setPassword={setPassword} label='Password' />
-          <TextInput label='First Name'  setName={setName} name={name} />
-          <TextInput label='Last Name' setName={setName} name={name}/>
+          <TextInput label='First Name'  setName={setName} name={firstName} />
+          <TextInput label='Last Name' setName={setName} name={lastName}/>
           <Button variant = 'primary' size='large' text='submit' loader={loader}/>
           <p className={formStyles.alt}>or</p>
           <Link to="/" >
