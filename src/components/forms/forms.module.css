@@ -1,0 +1,10 @@
+.alt {
+    margin: auto;
+    margin-top: 1.4rem;
+    text-align: center;
+    color: var(--pink);
+  }
+  
+  :global form{
+    margin-top: 2rem;
+  }

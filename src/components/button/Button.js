@@ -1,22 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
+import styles from './button.module.css'
+import ButtonLoader from '../loader/ButtonLoader'
 
-const Button = () => {
-  const [loader, setLoader] = useState(false)
-  const hanleClick = () => {
-    setLoader(true)
-    setTimeout(() => {
-      setLoader(false)
-    }, 3000)
-  }
+const Button = ({variant, size, text, loader, handleSubmit}) => {
+  
   return (
     <>
-      <button type="submit" className="btn" onClick={hanleClick}>
+      <button type="submit"  onClick={handleSubmit} className={`${styles[variant]} ${styles[size]}`} >
         {loader ? (
-          <div className="loader-container">
-            <div className="loader"></div>
-          </div>
+          <ButtonLoader/>
         ) : (
-          'submit'
+          <>{text}</>
         )}
       </button>
     </>
