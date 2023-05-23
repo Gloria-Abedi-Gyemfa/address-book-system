@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
 import Alert from '../../alert/Alert'
 import SignupForm from './SignupForm'
 import Card from '../../card/Card'
 import Cookies from 'js-cookie'
+import Api from '../../services/api'
 
 const SignupCard = () => {
   const [loader, setLoader] = useState(false)
@@ -14,13 +14,9 @@ const SignupCard = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const data = new FormData(e.target)
-    console.log(data);
-    
+    const data = new FormData(e.target)  
       try {
-        const response = await axios.post(
-          `https://address-book-system.onrender.com/api/v1/auth/register`,
-          Object.fromEntries(data.entries())
+        const response = await Api.post('/register', Object.fromEntries(data.entries())
         )
         if (response.data.success) {
           setAlert({

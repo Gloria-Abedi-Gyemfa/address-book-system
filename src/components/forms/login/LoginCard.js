@@ -7,7 +7,6 @@ import  {useNavigate } from 'react-router-dom'
 
 const LoginCard = ({onAlert}) => {
     const [loader, setLoader] = useState(false)
-    // const [childAlert, setChildAlert] = useState({ show: false, message: '', type: '' })
     const [alert, setAlert] = useState({ show: false, message: '', type: '' })
     const navigate = useNavigate()
 
@@ -19,24 +18,14 @@ const LoginCard = ({onAlert}) => {
             if (response.data.success) {
               setAlert({show: true, message: response.data.message,  type: 'success'})
               setTimeout(() => {
-                // setChildAlert=(prev)=>({...prev,  show: false })
-                // onAlert(childAlert)
                 setAlert({show: false})
               }, 4000)
             }
             navigate('/dashboard')
           } catch (error) {
             setLoader(true)
-            // setChildAlert=(prev)=>({
-            //   ...prev,
-            //   show: true,
-            //   message: JSON.stringify(error.response.data.message),
-            //   type: 'error',
-            // })
-            // onAlert(childAlert)
             setAlert({show: true,  message: JSON.stringify(error.response.data.message), type: 'error',})
             setTimeout(() => {
-              // setChildAlert=(prev)=>({...prev, show: false })
               setAlert({show: false})
               setLoader(false)
             }, 4000)
