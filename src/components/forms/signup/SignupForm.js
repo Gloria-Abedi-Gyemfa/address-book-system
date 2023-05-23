@@ -6,7 +6,7 @@ import PasswordInput from '../input/PasswordInput'
 import TextInput from '../input/TextInput'
 import formStyles from '../forms.module.css'
 
-const SignupForm = ({ handleSubmit }) => {
+const SignupForm = ({ handleSubmit, loader }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 <<<<<<< Updated upstream
@@ -25,19 +25,11 @@ const SignupForm = ({ handleSubmit }) => {
 <<<<<<< Updated upstream
           <TextInput label='First Name'  setName={setName} name={name} />
           <TextInput label='Last Name' setName={setName} name={name}/>
-          <Button variant = 'primary' size='large' text='submit' loader={loader} />
-          <div className={formStyles.alt}>
-            <Link to="/">Login</Link>
-          </div>
-=======
-          <TextInput label='First Name'  setName={setFirstName} name={firstName} />
-          <TextInput label='Last Name' setName={setLastName} name={lastName}/>
           <Button variant = 'primary' size='large' text='submit' loader={loader}/>
           <p className={formStyles.alt}>or</p>
           <Link to="/" >
             <Button variant='secondary' size='large' text='Login' />
           </Link>         
->>>>>>> Stashed changes
       </form>
     </>
   )

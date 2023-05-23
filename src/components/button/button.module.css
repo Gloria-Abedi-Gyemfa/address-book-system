@@ -33,7 +33,7 @@
     background-color: var(--dark-green);  
   }
 .secondary{
-    border: none;
+    border: 2px solid var(--dark-green);
     background-color: white;
     color: var(--dark-green);
   }
