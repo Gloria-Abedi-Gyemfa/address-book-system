@@ -12,7 +12,6 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage/>} />
-
         <Route path='dashboard' element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
         <Route path="signup" element={<SignupPage />} />
       </Routes>

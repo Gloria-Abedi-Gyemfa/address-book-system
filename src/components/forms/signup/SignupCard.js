@@ -16,6 +16,7 @@ const SignupCard = () => {
     e.preventDefault()
     const data = new FormData(e.target)  
       try {
+        setLoader(true)
         const response = await Api.post('/register', Object.fromEntries(data.entries())
         )
         if (response.data.success) {
@@ -24,14 +25,15 @@ const SignupCard = () => {
             type: 'success',
             message: response.data.message,
           })
-          setLoader(true)
+
           setTimeout(() => {
             setAlert({ show: false })
             setLoader(false)
+            Cookies.set('userToken', response.data.access_token)
+            navigate('/dashboard')
           }, 2000)
+          
         }
-        Cookies.set('userToken', response.data.access_token)
-        navigate('/dashboard')
       } catch (error) {
         setAlert({
           show: true,
