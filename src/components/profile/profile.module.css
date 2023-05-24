@@ -1,0 +1,17 @@
+.profile{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.profileHorizontalBar{
+    margin-top: 10px;
+    height: 3px;
+    background-color: var(--pink);
+    display: none;
+}
+.userAvatar{
+    border-radius: 50%;
+    border: 2px solid var(--dark-green);
+    height: 45px;
+    width: 2.5rem;
+}
