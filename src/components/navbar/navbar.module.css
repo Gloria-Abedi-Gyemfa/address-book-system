@@ -1,0 +1,26 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: medium;
+    color: var(--dark-green);
+    text-align: center;
+    height: 150px;    
+}
+.home{
+    display: flex;
+}
+
+.list{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    letter-spacing: 0.094rem;
+}
+.homeHorizontalBar, .contactHorizontalBar{
+    margin-top: 10px;
+    height: 3px;
+    background-color: var(--pink);
+    display: none;
+}

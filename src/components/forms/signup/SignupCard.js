@@ -30,9 +30,9 @@ const SignupCard = () => {
             setAlert({ show: false })
             setLoader(false)
             Cookies.set('userToken', response.data.access_token)
+            Cookies.set('name', response.data.data.firstName)
             navigate('/dashboard')
           }, 2000)
-          
         }
       } catch (error) {
         setAlert({
