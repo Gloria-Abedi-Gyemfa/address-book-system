@@ -6,7 +6,7 @@ const Button = ({variant, size, text, loader, handleSubmit}) => {
   
   return (
     <>
-      <button type="submit"  onClick={handleSubmit} className={`${styles[variant]} ${styles[size]}`} >
+      <button type="submit"  onClick={handleSubmit} className={`${styles[variant]} ${styles[size]}`}  disabled={loader}>
         {loader ? (
           <ButtonLoader/>
         ) : (
