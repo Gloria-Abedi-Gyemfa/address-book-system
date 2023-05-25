@@ -6,7 +6,7 @@ import assetStyle from '../assets/assets.module.css'
 import Profile from '../profile/Profile'
 import Menu from '../menu/Menu'
 import { Link } from 'react-router-dom'
-import Home from '../../pages/Home'
+// import Home from '../../pages/Home'
 
 const Navbar = () => {
   return (
