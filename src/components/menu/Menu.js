@@ -5,10 +5,12 @@ import assetStyle from '../assets/assets.module.css'
 
 const Menu = () => {
   return (
+    <>
     <div>
     <img src={logo} className={assetStyle.logo }/>
     <p className={styles.logo}>FindMe</p>
     </div>
+    </>
   )
 }
 
