@@ -8,20 +8,20 @@ const Navbar = ({setShowDrawer, showDrawer}) => {
   return (
     <div className={styles.navbar}>
       <Menu setShowDrawer={setShowDrawer} showDrawer={showDrawer}/>
-    <div className={styles.list}>
-    <div>
-    <div className={styles.home}>
-    <p>Home</p>
-    <div className={styles.homeHorizontalBar}></div>
-    </div>
-    </div>
+
+      <div className={styles.list}>
+        <div className={styles.home}>
+          <p>Home</p>
+          <div className={styles.homeHorizontalBar}></div>
+        </div>
     
-    <div className={styles.contact}>
-        <p>Contacts</p>
+        <div className={styles.contact}>
+          <p>Contacts</p>
         <div className={styles.contactHorizontalBar}></div>
-    </div>
-    <Profile/>
-    </div>
+        </div>
+        <Profile/>
+      </div>
+
     </div>
   )
 }

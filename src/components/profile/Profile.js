@@ -1,17 +1,20 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import styles from './profile.module.css'
-import Card from '../card/Card'
 import Cookies from 'js-cookie'
-import avatar from '../assets/girl.png'
+import ProfileHover from './ProfileHover'
+import UserImage from './UserImage'
 
 const Profile = () => {
   const username =  Cookies.get('name')
+  const [hoverProfile, setHoverProfile] = useState(false)
 
   return (
     <div className={styles.profile}>
-        <img src={avatar} className={styles.userAvatar} style={{marginRight: '.5rem'}}/>
-        <h2>{username}</h2>
-        <div className={styles.profileHorizontalBar}></div>
+        <div onClick={()=>setHoverProfile(!hoverProfile)}>
+          <UserImage/>
+        <h4>{username}</h4>
+        </div>
+        {hoverProfile ? <ProfileHover username={username}/>: undefined}
     </div>
   )
 }

@@ -4,7 +4,6 @@
     align-items: center;
     font-size: medium;
     color: var(--dark-green);
-    text-align: center;
     height: 150px;    
 }
 .home{
@@ -17,12 +16,19 @@
     justify-content: space-between;
     font-weight: 600;
     letter-spacing: 0.094rem;
+    align-items: end;
 }
-.homeHorizontalBar, .contactHorizontalBar{
+ .contactHorizontalBar{
     margin-top: 10px;
     height: 3px;
     background-color: var(--pink);
-    display: none;
+    visibility: hidden;
+}
+.homeHorizontalBar{
+    margin-top: 10px;
+    height: 3px;
+    background-color: var(--pink);
+    visibility: hidden;
 }
 
 @media (max-width:770px) {

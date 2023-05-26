@@ -18,4 +18,5 @@ body {
   min-height: 100vh;
   background-color: var(--light-grey);
   font-family: 'Livvic';
+  text-transform: capitalize;
 }

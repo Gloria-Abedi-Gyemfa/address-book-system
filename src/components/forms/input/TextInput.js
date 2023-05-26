@@ -15,7 +15,7 @@ const TextInput = ({label, setName, name}) => {
       value={name}
       onFocus={e=>e.target.placeholder = ''}
       onBlur={e=>e.target.placeholder=`${label}`}
-      minLength='5'
+      maxLength='20'
       className={inputStyles.input}
       required
       />
