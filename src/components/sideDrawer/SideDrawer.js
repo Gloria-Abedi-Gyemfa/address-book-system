@@ -1,14 +1,11 @@
 import React, {useState} from 'react'
 import styles from './sideDrawer.module.css'
-import {RiCloseFill} from 'react-icons/ri'
+
 
 const SideDrawer = () => {
-    const [showDrawer, setShowDrawer] = useState(false)
+    
   return (
-    <div className={styles.drawer}>
-       
-        <RiCloseFill className={styles.closeIcon} onClick={()=>setShowDrawer(!showDrawer)}/>
-        
+       <div className={styles.drawer}>
         <ul >
           <li>Home</li>
          <li>Contacts</li>
@@ -16,6 +13,7 @@ const SideDrawer = () => {
           <li>Logout</li>
         </ul>
   </div>
+   
   )
 }
 

@@ -11,14 +11,10 @@
 }
 .drawer ul{
     list-style: none;
+    margin-top: 50px;
 }
 .drawer li{
     padding: 1.5rem;
     cursor: pointer;
 }
 
-.closeIcon{
-    padding-left: 11.5rem;
-    padding-top: 0.5rem;
-    cursor: pointer;
-}
