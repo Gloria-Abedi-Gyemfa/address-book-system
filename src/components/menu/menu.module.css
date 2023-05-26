@@ -5,3 +5,7 @@
     font-style: italic;
     cursor: pointer;
 }
+.menuInvisible{
+    visibility: hidden;
+}
+

@@ -4,6 +4,7 @@ import LoginForm from './LoginForm'
 import Alert from '../../alert/Alert'
 import Api from '../../services/api'
 import  {useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 const LoginCard = () => {
     const [loader, setLoader] = useState(false)
@@ -21,6 +22,8 @@ const LoginCard = () => {
               setTimeout(() => {
                 setAlert({show: false})
                 setLoader(false)
+                Cookies.set('userToken', response.data.access_token)
+                Cookies.set('name', response.data.data.firstName)
                 navigate('/dashboard')
               }, 4000)
             }
