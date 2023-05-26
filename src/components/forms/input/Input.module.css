@@ -41,4 +41,17 @@
     display: block;
     font-size: 0.7rem;
 }
-
+.eyeSlashInvisible, .eyeInvisible{
+    display: none;
+}
+.eyeSlashVisible, .eyevisible{
+    display: block;
+}
+.eyeToggle{
+    color: var(--dark-green);
+    position: absolute;
+    align-items: center;
+    margin-top: 0.8rem;
+    margin-left: -1.4rem;
+    cursor: pointer;
+}
