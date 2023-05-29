@@ -1,10 +1,11 @@
 .navbar{
+    position: fixed;
+    left: 20rem;
+    top: 40px;
+    height: 40px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    font-size: medium;
-    color: var(--dark-green);
-    height: 150px;    
 }
 .home{
     display: flex;

@@ -9,9 +9,9 @@ const Dashboard = () => {
   const [showDrawer, setShowDrawer] = useState(false)
   return (
     <div className={styles.main}>
-    <Navbar setShowDrawer={setShowDrawer} showDrawer={showDrawer}/>
+    <Navbar />
     <RiCloseFill className={styles.closeIcon} onClick={()=>setShowDrawer(!showDrawer)}/>
-    {showDrawer && <SideDrawer setShowDrawer={setShowDrawer} showDrawer={showDrawer}/>}
+     <SideDrawer />
     <main>
     {/* <Profile/>  */}
     </main>

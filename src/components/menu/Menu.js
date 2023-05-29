@@ -3,10 +3,10 @@ import styles from './menu.module.css'
 import logo from '../assets/id-card.png'
 import assetStyle from '../assets/assets.module.css'
 
-const Menu = ({setShowDrawer, showDrawer}) => {
+const Menu = () => {
   return (
     <>
-    <div onClick={()=>setShowDrawer(true)} className={showDrawer ? styles.menuInvisible : undefined }>
+    <div className={styles.showDrawer} >
     <img src={logo} className={assetStyle.logo }/>
     <p className={styles.logo}>FindMe</p>
     </div>

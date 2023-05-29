@@ -7,8 +7,6 @@ import Menu from '../menu/Menu'
 const Navbar = ({setShowDrawer, showDrawer}) => {
   return (
     <div className={styles.navbar}>
-      <Menu setShowDrawer={setShowDrawer} showDrawer={showDrawer}/>
-
       <div className={styles.list}>
         <div className={styles.home}>
           <p>Home</p>
