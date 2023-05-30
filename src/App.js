@@ -6,6 +6,7 @@ import SignupPage from './pages/SignupPage'
 import Dashboard from './pages/Dashboard'
 import LoginPage from './pages/LoginPage'
 import ProtectedRoute from './components/services/ProtectedRoute'
+import Unauthorized from './pages/Unauthorized'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<LoginPage/>} />
         <Route path='dashboard' element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
         <Route path="signup" element={<SignupPage />} />
+        <Route path='401-page' element={<Unauthorized/>}/>
       </Routes>
     </BrowserRouter>
   )

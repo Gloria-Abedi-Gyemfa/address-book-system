@@ -2,14 +2,15 @@
     font-weight: 700;
     margin-top: 1.8rem;
     color: var(--green-color);
+    
   }
 .input {
     font-size: 0.94rem;
     padding: 0.5rem 0.8rem;
     letter-spacing: -0.115385px;
-    height: 37px;
-    background-color: whitesmoke;
-    border: none;
+    height: 50px;
+    border: 2px solid rgb(233, 231, 231);
+    width: 100%;
     color: var(--dark-green);
 }
 .inputWrapper{

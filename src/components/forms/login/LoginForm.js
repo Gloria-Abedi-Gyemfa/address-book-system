@@ -14,10 +14,9 @@ const LoginForm = ({handleSubmit, loader}) => {
         <EmailInput email={email} setEmail={setEmail} label='email'/>
         <PasswordInput password={password} setPassword={setPassword} name={password} label='password'/>
         <Button variant = 'primary' size='large' text='submit' loader={loader}/>
-        <p className={formStyles.alt}>or</p>
-          <Link to="signup" >
-            <Button variant='secondary' size='large' text='Signup' />
-          </Link>
+        <p className={formStyles.alt}>Don't have account?<Link to="/" >
+          Signup
+          </Link></p> 
       </form>
       
   )
