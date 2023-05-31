@@ -12,13 +12,13 @@
   --green-color: #014e56;
   --pink: #f67e7e;
   --white: #fff;
-  --dark-green: #004047;
+  --dark-green: #318CE7;
 }
 body {
   min-height: 100vh;
   background-color: var(--light-grey);
   font-family: 'Livvic';
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 a{
   text-decoration: none;
