@@ -1,9 +1,9 @@
 .alt {
-    margin: auto;
-    margin-top: 1.4rem;
-    text-align: center;
-  }
-  
-  :global form{
-    margin-top: 2rem;
-  }
+  margin: auto;
+  margin-top: 1.4rem;
+  text-align: center;
+}
+
+.form {
+  margin-top: 2rem;
+}

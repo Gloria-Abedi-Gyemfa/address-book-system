@@ -1,58 +1,58 @@
 .label {
-    font-weight: 700;
-    margin-top: 1.8rem;
-    color: var(--green-color);
-    
-  }
+  font-weight: 700;
+  margin-top: 1.8rem;
+  color: var(--green-color);
+}
 .input {
-    font-size: 0.94rem;
-    padding: 0.5rem 0.8rem;
-    letter-spacing: -0.115385px;
-    height: 50px;
-    border: 2px solid rgb(233, 231, 231);
-    width: 100%;
-    color: var(--dark-green);
+  font-size: 0.94rem;
+  padding: 0.5rem 0.8rem;
+  letter-spacing: -0.115385px;
+  height: 50px;
+  border: 2px solid rgb(233, 231, 231);
+  width: 100%;
+  color: var(--dark-green);
 }
-.inputWrapper{
-    margin-top: 0.2rem;
-    margin-bottom: 1.8rem;
+.inputWrapper {
+  margin-top: 0.2rem;
+  margin-bottom: 1.8rem;
 }
-.input::placeholder{
-    font-size: 0.9rem;
+.input::placeholder {
+  font-size: 0.9rem;
 }
-.input:not(:focus):not(:placeholder-shown):invalid {
-    outline: 2px solid var(--pink);
-}
+.input:not(:focus):not(:placeholder-shown):invalid,
 .input:focus:invalid {
-    outline: 2px solid var(--pink);
+  outline: 2px solid var(--pink);
+  border: none;
 }
-     
-.input:not(:focus):not(:placeholder-shown):valid{
-    outline: 2px solid var(--light-green);
+
+.input:not(:focus):not(:placeholder-shown):valid {
+  outline: 2px solid var(--light-green);
 }
-.alert{
-    color: var(--pink);
-    display: none;
+.alert {
+  color: var(--pink);
+  display: none;
 }
-.input:focus:invalid ~ .alert{
-    display: block;
-    font-size: 0.7rem;
+.input:focus:invalid ~ .alert {
+  display: block;
+  font-size: 0.7rem;
 }
-.input:not(:focus):not(:placeholder-shown):invalid ~ .alert{
-    display: block;
-    font-size: 0.7rem;
+.input:not(:focus):not(:placeholder-shown):invalid ~ .alert {
+  display: block;
+  font-size: 0.7rem;
 }
-.eyeSlashInvisible, .eyeInvisible{
-    display: none;
+.eyeSlashInvisible,
+.eyeInvisible {
+  display: none;
 }
-.eyeSlashVisible, .eyevisible{
-    display: block;
+.eyeSlashVisible,
+.eyevisible {
+  display: block;
 }
-.eyeToggle{
-    color: var(--dark-green);
-    position: absolute;
-    align-items: center;
-    margin-top: 0.8rem;
-    margin-left: -1.4rem;
-    cursor: pointer;
+.eyeToggle {
+  color: var(--dark-green);
+  position: absolute;
+  align-items: center;
+  margin-top: 0.8rem;
+  margin-left: -1.4rem;
+  cursor: pointer;
 }

@@ -34,18 +34,15 @@ const Input = ({label, type, name, setInputValue, placeholder, inputValue}) => {
       : undefined
       }
       </div>
-      {() => {
-        if(name === 'password'){
-          return (
-            <p>Password should be atleast 8 characters</p>
-          )
-        } else if (name === 'email') {
-          return (
-            <p> Enter a valid email</p>
-          )
-        }
-      }
-      }
+      {name === 'password' ? (
+        <p className={styles.alert}>Password should be atleast 8 characters</p>
+      ) : name === 'email' ? (
+        <p className={styles.alert}>Enter valid email</p>
+      ) : name === 'first name' ? (
+        <p className={styles.alert}>Enter first name</p>
+      ) : name === 'first name' ? (
+        <p className={styles.alert}>Enter first name</p>
+      ) : null}
         
     </div>
   )

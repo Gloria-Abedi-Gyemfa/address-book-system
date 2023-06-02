@@ -15,7 +15,7 @@ const SignupForm = ({ handleSubmit, loader }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>        
+      <form onSubmit={handleSubmit} className={formStyles.forms}>        
           <EmailInput email={email} setEmail={setEmail} label='email'/>
           <PasswordInput password={password} setPassword={setPassword} label='password' />
             <TextInput label='firstName'  setName={setFirstName} name={firstName} />

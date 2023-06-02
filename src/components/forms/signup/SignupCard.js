@@ -12,43 +12,49 @@ const SignupCard = () => {
 
   const navigate = useNavigate()
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault()
-    const data = new FormData(e.target)  
-      try {
-        setLoader(true)
-        const response = await Api.post('/register', Object.fromEntries(data.entries())
-        )
-        if (response.data.success) {
-          setAlert({
-            show: true,
-            type: 'success',
-            message: response.data.message,
-          })
-
-          setTimeout(() => {
-            setAlert({ show: false })
-            setLoader(false)
-            Cookies.set('userToken', response.data.access_token)
-            Cookies.set('name', response.data.data.firstName)
-            navigate('/dashboard')
-          }, 2000)
-
-        }
-      } catch (error) {
-        setAlert({
-          show: true,
-          type: 'error',
-          message: error.response.data.message,
-        })
-        setLoader(true)
-        setTimeout(() => {
-          setAlert({ show: false })
-          setLoader(false)
-        }, 2000)
-        navigate('/signup')
+    useEffect(() => {
+      const fetchData = async () => {
+        const data = new FormData(e.target)  
+          try {
+            setLoader(true)
+            const response = await Api.post('/register', Object.fromEntries(data.entries())
+            )
+            if (response.data.success) {
+              setAlert({
+                show: true,
+                type: 'success',
+                message: response.data.message,
+              })
+    
+              setTimeout(() => {
+                setAlert({ show: false })
+                setLoader(false)
+                Cookies.set('userToken', response.data.access_token)
+                Cookies.set('name', response.data.data.firstName)
+                navigate('/dashboard')
+              }, 2000)
+    
+            }
+          } catch (error) {
+            setAlert({
+              show: true,
+              type: 'error',
+              message: error.response.data.message,
+            })
+            setLoader(true)
+            setTimeout(() => {
+              setAlert({ show: false })
+              setLoader(false)
+            }, 2000)
+            navigate('/signup')
+          }
       }
-    }
+      fetchData()
+    }, [])
+    
+  }
     
 
 

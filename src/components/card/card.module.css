@@ -8,5 +8,8 @@
   }
   .card{
     width: 10rem;
+    align-content: center;
+    align-items: center;
+
   }
   

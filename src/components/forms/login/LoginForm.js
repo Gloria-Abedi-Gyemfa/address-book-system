@@ -10,7 +10,7 @@ const LoginForm = ({handleSubmit, loader}) => {
   const [password, setPassword] = useState('')
 
   return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={formStyles.forms}>
         <EmailInput email={email} setEmail={setEmail} label='email'/>
         <PasswordInput password={password} setPassword={setPassword} name={password} label='password'/>
         <Button variant = 'primary' size='large' text='submit' loader={loader}/>
