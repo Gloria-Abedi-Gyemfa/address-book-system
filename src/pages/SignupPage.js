@@ -6,7 +6,8 @@ import styles from './pages.module.css'
 const SignupPage = () => {
   return (
     <div className={styles.authPage}>
-      <Gallery page='signup'/>
+      <Gallery page='signup' />
+      
       <Signup/>
     </div>
   )

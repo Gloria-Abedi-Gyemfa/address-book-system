@@ -3,6 +3,9 @@ import styles from './forms.module.css'
 import {FaEye} from 'react-icons/fa'
 
 const Password = () => {
+  const validatePwd = () => {
+    
+  }
   return (
     <div className={styles.inputWrapper}>
         <label>Password</label>

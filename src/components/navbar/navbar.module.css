@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0.25rem;
+  background-color: #0000ff;
+  border-bottom: 1px solid grey;
+}
+.menubar {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: larger;
+}
+.proImg {
+  border-radius: 50%;
+  border: 1px solid red;
+}

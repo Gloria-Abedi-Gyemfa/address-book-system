@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './forms.module.css'
 
 const Email = () => {
+  const validateMail = ()=>{}
   return (
     <div className={styles.inputWrapper}>
         <label>Email</label>
