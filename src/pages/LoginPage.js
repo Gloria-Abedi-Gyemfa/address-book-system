@@ -1,15 +1,14 @@
 import React from 'react'
-import AuthLayout from '../components/services/authLayout'
-import LoginCard from '../components/forms/login/LoginCard'
+import Gallery from '../components/gallery/Gallery'
+import styles from './pages.module.css'
+import Login from '../components/Login'
 
 const LoginPage = () => {
- 
   return (
-    <>
-    <AuthLayout>
-        <LoginCard />
-     </AuthLayout>
-    </>
+    <div className={styles.authPage}>
+      <Gallery page='login'/>
+      <Login/>
+    </div>
   )
 }
 

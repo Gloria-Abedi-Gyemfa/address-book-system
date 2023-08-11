@@ -1,14 +1,13 @@
 import React from 'react'
-import AuthLayout from '../components/services/authLayout'
-import SignupCard from '../components/forms/signup/SignupCard'
+import Gallery from '../components/gallery/Gallery'
+import Signup from '../components/Signup'
 import styles from './pages.module.css'
 
 const SignupPage = () => {
   return (
-    <div className={styles.formPage}>
-    <AuthLayout>
-      <SignupCard />
-    </AuthLayout>
+    <div className={styles.authPage}>
+      <Gallery page='signup'/>
+      <Signup/>
     </div>
   )
 }
