@@ -42,6 +42,12 @@
 .mobileImg {
   display: none;
 }
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 @media (max-width: 780px) {
   .forms {
     width: 100% !important;
@@ -57,5 +63,4 @@
   .heading {
     margin-right: 0 !important;
   }
-  
 }

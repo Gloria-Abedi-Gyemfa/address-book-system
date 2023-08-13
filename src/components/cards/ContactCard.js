@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './cards.module.css'
 
 const ContactCard = () => {
   return (
-    <div>
+    <div className={styles.contact}>
       <div className='userImg'></div>
       <div className='contactDetails'>
         <p className='name'>Gloria</p>
