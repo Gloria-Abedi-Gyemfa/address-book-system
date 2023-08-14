@@ -1,17 +1,25 @@
-.primary {
+button{
   border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+}
+.primary {
   background: linear-gradient(0deg, #0267ff 0%, #0267ff 100%),
     linear-gradient(127deg, #6425d3 0%, #a259ff 100%),
     linear-gradient(0deg, #0267ff 0%, #0267ff 100%),
     linear-gradient(81deg, #1275d0 0%, #62aef3 100%);
   color: #ffffff;
-  border: none;
+  
 }
 .tertiary {
-  border-radius: 4px;
   background: #ffffff;
   color: #47515e;
-  border: 1px solid #000000;
+  border: 1px solid #000000 !important;
+}
+.danger{
+  background-color: #ff0000;
+  color: #ffffff;
 }
 .large {
   width: 18.75rem;

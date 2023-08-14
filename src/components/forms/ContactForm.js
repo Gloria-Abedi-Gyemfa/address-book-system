@@ -19,7 +19,7 @@ const ContactForm = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      const response = await ContactApi.post('contact', { phone, email, name, address})
+      const response = await ContactApi.post('add-contact', { phone, email, name, address})
       console.log(response.message)
     } catch (error) {
       console.log(error)
@@ -32,7 +32,7 @@ const ContactForm = () => {
         <Name name={name} setName={setName} />
         <Phone phone={phone} setPhone={setPhone} />
         <Email email={email} setEmail={setEmail} />
-        <Address address={address} setAdress={setAddress} />
+        <Address address={address} setAddress={setAddress} />
         <State state={state} setState={setState} />
         <div className={styles.contactBtns}>
           <Button

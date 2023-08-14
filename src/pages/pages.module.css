@@ -4,3 +4,42 @@
   height: 100vh;
   overflow-x: hidden;
 }
+.userName{
+  text-transform: capitalize;
+}
+.addContact{
+  margin-bottom: 2rem;
+}
+.camera{
+  background-color: #1275D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: auto;
+  bottom: 55px;
+  position: relative;
+}
+.cam{
+  color: #ffffff;
+  width: 100px;
+  height: 100px;
+}
+.updateFormWrap{
+  margin-top: -22px;
+}
+.form{
+  width: fit-content;
+  padding: 0rem 1.8rem 2.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  margin-top: 6rem;
+}

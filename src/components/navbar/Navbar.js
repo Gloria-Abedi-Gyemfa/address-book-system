@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { BiMenu } from 'react-icons/bi'
-import { BsPersonFill } from 'react-icons/bs'
 import SideDrawer from './SideDrawer'
 import styles from './navbar.module.css'
 import Cookies from 'js-cookie'
+import person from '../../assets/person_avatar.png'
 
 const Navbar = () => {
   const [toggleDrawer, setToggleDrawer] = useState(false)
@@ -15,12 +15,13 @@ const Navbar = () => {
         className={styles.menubar}
       />
       <div className={styles.logo}>Contact Book</div>
-      {toggleDrawer && <SideDrawer />}
+      {toggleDrawer && <SideDrawer setToggleDrawer={setToggleDrawer}/>}
       <div className={styles.profile}>
+      <p className={styles.userName}>{Cookies.get('first_name')}</p>
         <div className={styles.proImg}>
-          <img src={<BsPersonFill />} />
+          <img src={person}  className={styles.personAvatar}/>
         </div>
-        <p>{Cookies.get('first_name')}</p>
+        
       </div>
     </div>
   )

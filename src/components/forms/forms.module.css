@@ -53,6 +53,20 @@
   justify-content: space-between;
   margin-top: 2rem;
 }
+.genderWrapper{
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.gender{
+  display: flex;
+  justify-content: space-between;
+}
+.genderType{
+  margin-top: 0.5rem;
+}
+.genderValue{
+  color: #686868;
+}
 @media (max-width: 780px) {
   .forms {
     width: 100% !important;

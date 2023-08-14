@@ -1,0 +1,13 @@
+.logoutCard{
+    background-color: #ffffff;
+    padding: 2.5rem;
+    position: fixed;
+    top: 35%;
+    left: 18%;
+    z-index: 51;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 0.5rem;
+    }
+.logoutBtns{
+    margin-top: 2rem;
+}
