@@ -1,0 +1,41 @@
+/* .addContactImg {
+  width: 70%;
+} */
+.addContactWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.addBtn {
+  border-radius: 4px;
+  background: linear-gradient(0deg, #0267ff 0%, #0267ff 100%),
+    linear-gradient(127deg, #6425d3 0%, #a259ff 100%),
+    linear-gradient(0deg, #0267ff 0%, #0267ff 100%),
+    linear-gradient(81deg, #1275d0 0%, #62aef3 100%);
+  color: #ffffff;
+  border: none;
+  width: 16.75rem;
+  height: 3.7rem;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.08px;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+.alert {
+  color: #47515e;
+  text-align: center;
+
+  /* Heading/H1/SemiBold */
+  font-family: Roboto;
+  font-size: 47.78px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.239px;
+  margin-bottom: 4rem;
+}

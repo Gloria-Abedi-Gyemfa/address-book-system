@@ -34,3 +34,11 @@ ul {
   display: flex;
   color: #ffffff;
 }
+.logo {
+  color: #ffff;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.115px;
+}
