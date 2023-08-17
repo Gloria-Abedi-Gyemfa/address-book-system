@@ -6,45 +6,29 @@ import Email from './forms/Email'
 import login from '../assets/loginMobile.png'
 import { useNavigate } from 'react-router'
 import { AuthApi } from '../services/api'
-import { useState } from 'react'
+import { useState } from 'react' 
 import { RotatingLines } from 'react-loader-spinner'
 import Cookies from 'js-cookie'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginUser} from '../features/authSlice'
+
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const email = useSelector(state=>state.user.email)
+  const password = useSelector(state=>state.user.password)
   const [loader, setLoader] = useState(false)
-
+  
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   const handleNavigation = () => {
     navigate('/signup')
   }
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault()
-    if (email.trim() !== '' && password.trim() !== '') {
-      setLoader(true)
-    } else {
-      alert('fill all fields')
-    }
-    try {
-      const response = await AuthApi.post('login', { email, password })
-      console.log(response)
-      if (response.data.success === true) {
-        navigate('/')
-        Cookies.set('access_token', response.data.data.access_token)
-        Cookies.set('refresh_token', response.data.data.refresh_token)
-        Cookies.set('email', response.data.data.email)
-        Cookies.set('first_name', response.data.data.firstName)
-        Cookies.set('last_name', response.data.data.lastName)
-        Cookies.set('_id', response.data.data._id)
-      }
-    } catch (error) {
-      console.log(error)
-      setTimeout(() => {
-        setLoader(false)
-      }, 3000)
-    }
+    dispatch(loginUser({email, password}))
+    console.log('hello');
   }
 
   return (
@@ -52,8 +36,8 @@ const Login = () => {
       <img src={login} className={styles.mobileImg} />
       <div className={styles.heading}> Login</div>
       <form onSubmit={handleSubmit}>
-        <Email email={email} setEmail={setEmail} />
-        <Password password={password} setPassword={setPassword} />
+        <Email/>
+        <Password  />
         <div className={styles.button}>
           {!loader ? (
             <Button text="Login" variant="primary" size="large" page="auth" />
