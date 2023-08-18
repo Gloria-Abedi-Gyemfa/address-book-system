@@ -25,14 +25,14 @@ const Password = () => {
         />
         {visibility ? null : (
           <FaEye
-            style={{ marginLeft: '-32px' }}
+            style={{ marginLeft: '-32px', cursor:'pointer' }}
             onClick={() => setVisibility(true)}
           />
         )}
 
         {visibility && (
           <FaEyeSlash
-            style={{ marginLeft: '-32px' }}
+            style={{ marginLeft: '-32px', cursor:'pointer' }}
             onClick={() => setVisibility(false)}
           />
         )}

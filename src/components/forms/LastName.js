@@ -1,7 +1,11 @@
 import React from 'react'
 import styles from './forms.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { setLastName } from '../../features/authSlice'
 
-const LastName = ({lastName, setLastName}) => {
+const LastName = () => {
+  const lastName = useSelector(state=>state.user.lastName)
+  const dispatch = useDispatch()
   return (
     <div className={styles.inputWrapper}>
       <label>Last Name</label>
@@ -10,7 +14,7 @@ const LastName = ({lastName, setLastName}) => {
           type="text"
           placeholder="Enter your Last name"
           value={lastName}
-          onChange={e => setLastName(e.target.value)}
+          onChange={e => dispatch(setLastName(e.target.value))}
           className={styles.input}
           required
         />

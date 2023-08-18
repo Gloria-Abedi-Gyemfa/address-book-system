@@ -12,12 +12,17 @@ import Cookies from 'js-cookie'
 
 import LastName from './forms/LastName'
 import UserFirstName from './forms/UserFirstName'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginUser, signupUser } from '../features/authSlice'
 
 const Signup = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+  const email = useSelector(state=>state.user.email)
+  const firstName = useSelector(state=>state.user.firstName)
+  const lastName = useSelector(state=>state.user.lastName)
+  const password = useSelector(state=>state.user.password)
+  const response = useSelector((state) => state.user.response);
+  const dispatch = useDispatch()
+
   const [loader, setLoader] = useState(false)
   const navigate = useNavigate()
 
@@ -37,28 +42,8 @@ const Signup = () => {
     } else {
       alert('Fill all inputs')
     }
-    try {
-      const response = await AuthApi.post('register', {
-        email,
-        firstName,
-        lastName,
-        password,
-      })
-      console.log(response.data.message)
-      if (response.data.success === true) {
-        navigate('/')
-        Cookies.set('access_token', response.data.data.access_token)
-        Cookies.set('refresh_token', response.data.data.refresh_token)
-        Cookies.set('email', response.data.data.email)
-        Cookies.set('first_name', response.data.data.firstName)
-        Cookies.set('last_name', response.data.data.lastName)
-      }
-    } catch (error) {
-      console.log(error)
-      setTimeout(() => {
-        setLoader(false)
-      }, 3000)
-    }
+    dispatch(signupUser({firstName, lastName, email,  password}))
+    console.log(response);
   }
 
   return (
@@ -66,10 +51,10 @@ const Signup = () => {
       <img src={signup} className={styles.mobileImg} />
       <div className={styles.heading}> Create Account</div>
       <form onSubmit={handleSubmit}>
-        <Email email={email} setEmail={setEmail} />
-        <UserFirstName firstName={firstName} setFirstName={setFirstName} />
-        <LastName lastName={lastName} setLastName={setLastName} />
-        <Password password={password} setPassword={setPassword} />
+        <UserFirstName  />
+        <LastName />
+        <Email/>
+        <Password />
         <div className={styles.button}>
           {!loader ? (
             <Button

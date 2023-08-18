@@ -1,26 +1,26 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { AuthApi } from "../services/api";
-import { toast } from "react-toastify";
-
 const initialState={
     email : '',
     password: '',
-    loading: false
+    firstName: '',
+    lastName: '',
+    loading: false,
+    response: null
+    // token: sessionStorage.get('access_token')|| ''
 }
 export const loginUser = createAsyncThunk('user', async(body)=>{
     try {
-        const response = await AuthApi.post('login',{body})
-    console.log(response.data.message)
-    return response.data
+        const response = await AuthApi.post('login',body)
+        return response.data
     } catch (error) {
         console.log(error.response.data.message);
-        toast.error(error.response.data.message)
     }
     
 } );
 
 export const signupUser = createAsyncThunk('user', async(body)=>{
-    const response = await AuthApi.post('register',{body} )
+    const response = await AuthApi.post('register',body )
     console.log(response.data.message)
     return response.data
 })
@@ -29,21 +29,34 @@ const authSlice = createSlice({
     name: 'user',
     initialState,
     reducers:{
+        
+        setFirstName: (state, {payload})=>{
+            state.firstName = payload
+        },
+        setLastName: (state,{payload})=>{
+            state.lastName = payload
+        },
         setEmail:(state, {payload})=>{
             state.email = payload
         },
         setPassword: (state, {payload})=>{
             state.password = payload
+        },
+        clearToken: (state)=>{
+            state.token = '';
+            sessionStorage.remove('authToken');
+
         }
     },
     extraReducers:{
         [loginUser.pending]:(state)=>{
             state.loading = true
         },
-        [loginUser.fulfilled]: (state, {payload:message,access_token, error})=>{
+        [loginUser.fulfilled]: (state, {payload:message, error, data})=>{
             state.loading = false;
             state.error = error;
             state.message = message
+            state.response = data; 
         },
         [loginUser.rejected]: (state)=>{
             state.loading = false;
@@ -57,4 +70,4 @@ const authSlice = createSlice({
 
 
 export default authSlice.reducer
-export const {setEmail, setPassword} = authSlice.actions
+export const {setEmail, setPassword,setFirstName, setLastName} = authSlice.actions

@@ -38,6 +38,7 @@
 }
 .option {
   color: #0267ff;
+  cursor: pointer;
 }
 .mobileImg {
   display: none;
