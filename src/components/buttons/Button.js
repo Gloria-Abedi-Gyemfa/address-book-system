@@ -1,10 +1,17 @@
 import React from 'react'
 import styles from './button.module.css'
-import { ContactApi } from '../../services/api'
+import {useNavigate} from 'react-router'
+import Cookies from 'js-cookie'
 
-const Button = ({ text, size, variant, page }) => {
+const Button = ({ text, size, variant, page, setShowModal }) => {
+  const navigate = useNavigate()
   const handleSubmit = () => {
-    if (text === 'Cancel') {
+    if (text === 'Yes, Logout') {
+      Cookies.remove('access_token') 
+      navigate('/login')
+    }
+    if(text === 'No'){
+      setShowModal(false)
     }
   }
 
