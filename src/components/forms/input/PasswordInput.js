@@ -20,6 +20,7 @@ const PasswordInput = ({ password, setPassword, label }) => {
         onFocus={e=>e.target.placeholder = ''}
         onBlur={e=>e.target.placeholder = 'Enter your password'}
         className={inputStyles.input}
+        minLength='8'
         required
       />
       <span className={inputStyles.eyeToggle}>
@@ -31,7 +32,7 @@ const PasswordInput = ({ password, setPassword, label }) => {
         onClick={() => setVisible(!visible)} 
         className={visible ? inputStyles.eyeSlashVisible : inputStyles.eyeSlashInvisible} />
       </span>
-      <div className={inputStyles.alert}>Password must be <br/>8-20 characters</div>
+      <div className={inputStyles.alert}>Password must be 8-20 characters</div>
     </div>
     
     </>

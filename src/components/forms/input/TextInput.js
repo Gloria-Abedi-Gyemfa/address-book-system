@@ -5,8 +5,8 @@ const TextInput = ({label, setName, name}) => {
   
   return (
     <>
-    <label className={inputStyles.label}>{label}</label>
       <div className={inputStyles.inputWrapper}>
+        <label className={inputStyles.label}>{label}</label>
       <input 
       placeholder={label}
       name={label}
@@ -15,7 +15,7 @@ const TextInput = ({label, setName, name}) => {
       value={name}
       onFocus={e=>e.target.placeholder = ''}
       onBlur={e=>e.target.placeholder=`${label}`}
-      minLength='5'
+      maxLength='20'
       className={inputStyles.input}
       required
       />

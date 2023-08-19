@@ -18,13 +18,12 @@ const SignupForm = ({ handleSubmit, loader }) => {
       <form onSubmit={handleSubmit}>        
           <EmailInput email={email} setEmail={setEmail} label='email'/>
           <PasswordInput password={password} setPassword={setPassword} label='password' />
-          <TextInput label='firstName'  setName={setFirstName} name={firstName} />
+            <TextInput label='firstName'  setName={setFirstName} name={firstName} />
           <TextInput label='lastName' setName={setLastName} name={lastName}/>
-          <Button variant = 'primary' size='large' text='submit' loader={loader}/>
-          <p className={formStyles.alt}>or</p>
-          <Link to="/" >
-            <Button variant='secondary' size='large' text='Login' />
-          </Link>         
+          <Button variant = 'primary' size='large' text='Submit' loader={loader}/>
+          <p className={formStyles.alt}>Already have account?<Link to="/" >
+          Login
+          </Link></p>                  
       </form>
     </>
   )

@@ -1,3 +1,9 @@
+.showDrawer{
+    width: max-content;
+    margin: auto;
+    margin-top: 42px;
+    
+}
 .logo{
     letter-spacing: 0.263rem;
     font-weight: 600;
@@ -5,7 +11,7 @@
     font-style: italic;
     cursor: pointer;
 }
-.menuInvisible{
+/* .menuInvisible{
     visibility: hidden;
-}
+} */
 

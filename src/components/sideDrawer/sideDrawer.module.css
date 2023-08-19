@@ -3,8 +3,8 @@
     height: 100%;
     font-weight: 600;
     letter-spacing: 0.1rem;
-    background: linear-gradient(var(--dark-green), var(--pink));
-    color: var(--white);
+    background: #CEF3FF;
+    color: #0884FF;
     top: 0;
     left: 0;
     width: 13rem;
@@ -12,9 +12,15 @@
 .drawer ul{
     list-style: none;
     margin-top: 50px;
+    color: #181818;
 }
 .drawer li{
     padding: 1.5rem;
     cursor: pointer;
 }
-
+.logout{
+    position: fixed;
+    bottom: 0;
+    border-top: 2px solid white;
+    width: 100%;
+}

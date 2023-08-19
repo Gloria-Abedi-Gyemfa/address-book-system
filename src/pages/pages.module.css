@@ -1,5 +1,4 @@
 .main{
-    width: 70%;
     margin: auto;
 }
 .closeIcon{
@@ -11,4 +10,21 @@
     cursor: pointer;
     z-index: 100;
     color: white;
+}
+.UnauthorizedPage{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.UnauthorizedImg{
+    max-width: 100%;
+    max-height: 100%;
+}
+.UnauthorizedPage h2{
+    font-size: xx-large;
+    font-weight: 900;
+}
+.UnauthorizedText{
+    font-size: small;   
 }
