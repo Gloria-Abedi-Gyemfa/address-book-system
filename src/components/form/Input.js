@@ -3,7 +3,7 @@ import FormContext from './Login'
 import styles from './form.module.css'
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa'
 
-const Input = ({label, type, name, setInputValue, placeholder, inputValue, isFirst}) => {
+const Input = ({label, type, name, setInputValue, placeholder, inputValue}) => {
     const [visible, setVisible] = useState(false)
   const inputType = visible ? 'text': 'password'
 
@@ -33,8 +33,17 @@ const Input = ({label, type, name, setInputValue, placeholder, inputValue, isFir
       </span>
       : undefined
       }
-        </div>
-        <p></p>
+      </div>
+      {name === 'password' ? (
+        <p className={styles.alert}>Password should be atleast 8 characters</p>
+      ) : name === 'email' ? (
+        <p className={styles.alert}>Enter valid email</p>
+      ) : name === 'first name' ? (
+        <p className={styles.alert}>Enter first name</p>
+      ) : name === 'first name' ? (
+        <p className={styles.alert}>Enter first name</p>
+      ) : null}
+        
     </div>
   )
 }

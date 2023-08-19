@@ -4,9 +4,7 @@ import authImage from '../assets/authImage.jpg'
 
 const AuthLayout = ({children}) => {
   return (
-    <>
     <div className={authStyles.card}>{children}</div>
-    </> 
   )
 }
 
