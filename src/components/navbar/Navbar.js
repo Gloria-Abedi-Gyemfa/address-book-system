@@ -10,17 +10,17 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbar}>
-      <div className={styles.logo}>Contact Book</div>
       <BiMenu
         onClick={() => setToggleDrawer(!toggleDrawer)}
         className={styles.menubar}
       />
+      <div className={styles.logo}>Contact Book</div>
       {toggleDrawer && <SideDrawer />}
       <div className={styles.profile}>
         <div className={styles.proImg}>
           <img src={<BsPersonFill />} />
         </div>
-        <p>{ Cookies.get('first_name')}</p>
+        <p>{Cookies.get('first_name')}</p>
       </div>
     </div>
   )

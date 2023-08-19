@@ -1,8 +1,6 @@
-.authPage{
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
+.authPage {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }

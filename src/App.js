@@ -5,12 +5,14 @@ import './App.css'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import HomePage from './pages/HomePage'
+import AddContact from './pages/AddContact'
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
+          <Route path="/add_contact" element={<AddContact />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />

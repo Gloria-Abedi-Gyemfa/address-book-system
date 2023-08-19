@@ -5,7 +5,7 @@ import Button from './buttons/Button'
 import styles from './forms/forms.module.css'
 import signup from '../assets/signupMobile.png'
 import { useNavigate } from 'react-router'
-import { Api } from '../services/api'
+import {  AuthApi } from '../services/api'
 import { useState } from 'react'
 import { RotatingLines } from 'react-loader-spinner'
 import Cookies from 'js-cookie'
@@ -38,7 +38,7 @@ const Signup = () => {
       alert('Fill all inputs')
     }
     try {
-      const response = await Api.post('register', {
+      const response = await AuthApi.post('register', {
         email,
         firstName,
         lastName,

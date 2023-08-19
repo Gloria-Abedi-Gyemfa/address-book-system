@@ -4,6 +4,7 @@ import ContactCard from '../components/cards/ContactCard'
 import Navbar from '../components/navbar/Navbar'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router'
+import styles from './pages.module.css'
 
 const HomePage = () => {
   const navigate = useNavigate()
@@ -12,11 +13,14 @@ const HomePage = () => {
       navigate('/login')
     }
   }, [])
-  
+
   return (
+    <div className={styles.home}>
+      <Navbar />
       <div>
-          <Navbar/>
-        <ContactCard/>
+        <input type="text" placeholder="search..." />
+      </div>
+      <ContactCard />
     </div>
   )
 }

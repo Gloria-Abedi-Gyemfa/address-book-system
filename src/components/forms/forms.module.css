@@ -48,6 +48,11 @@
   align-items: center;
   justify-content: center;
 }
+.contactBtns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
 @media (max-width: 780px) {
   .forms {
     width: 100% !important;

@@ -5,7 +5,7 @@ import styles from './forms/forms.module.css'
 import Email from './forms/Email'
 import login from '../assets/loginMobile.png'
 import { useNavigate } from 'react-router'
-import { Api } from '../services/api'
+import { AuthApi } from '../services/api'
 import { useState } from 'react'
 import { RotatingLines } from 'react-loader-spinner'
 import Cookies from 'js-cookie'
@@ -28,7 +28,7 @@ const Login = () => {
       alert('fill all fields')
     }
     try {
-      const response = await Api.post('login', { email, password })
+      const response = await AuthApi.post('login', { email, password })
       console.log(response)
       if (response.data.success === true) {
         navigate('/')
