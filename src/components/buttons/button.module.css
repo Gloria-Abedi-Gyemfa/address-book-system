@@ -1,0 +1,15 @@
+.primary{
+    border-radius: 4px;
+    background: linear-gradient(0deg, #0267FF 0%, #0267FF 100%), linear-gradient(127deg, #6425D3 0%, #A259FF 100%), linear-gradient(0deg, #0267FF 0%, #0267FF 100%), linear-gradient(81deg, #1275D0 0%, #62AEF3 100%);
+    color: #FFFFFF;
+    border: none;
+}
+.large{
+    width: 18.75rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.08px;
+}

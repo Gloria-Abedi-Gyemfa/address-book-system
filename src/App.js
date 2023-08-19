@@ -1,26 +1,22 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
 import './App.css'
+
+import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
-import Dashboard from './pages/Dashboard'
-// import LoginPage from './pages/LoginPage'
-import ProtectedRoute from './components/services/ProtectedRoute'
-import Unauthorized from './pages/Unauthorized'
-// import LoginPage from './components/form/LoginPage'
-import LoginPage from './components/form/LoginPage'
+import HomePage from './pages/HomePage'
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* <Route path="/" element={<LoginPage/>} /> */}
-        <Route path='/' element={<LoginPage/>}/>
-        <Route path='dashboard' element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
-        <Route path="signup" element={<SignupPage />} />
-        <Route path='401-page' element={<Unauthorized/>}/>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 

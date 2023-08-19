@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Livvic:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +17,7 @@
 body {
   min-height: 100vh;
   background-color: var(--light-grey);
-  font-family: 'Livvic';
-  /* text-transform: capitalize; */
+  font-family: 'Roboto', sans-serif;
 }
 a{
   text-decoration: none;
