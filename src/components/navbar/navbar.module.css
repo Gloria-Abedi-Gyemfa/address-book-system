@@ -24,3 +24,10 @@
     background-color: var(--pink);
     display: none;
 }
+
+@media (max-width:770px) {
+    .home, .contact{
+        display: none;
+    }
+    
+}

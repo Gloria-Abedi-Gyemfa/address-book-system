@@ -33,6 +33,7 @@ const SignupCard = () => {
             Cookies.set('name', response.data.data.firstName)
             navigate('/dashboard')
           }, 2000)
+
         }
       } catch (error) {
         setAlert({
