@@ -1,6 +1,3 @@
-/* .addContactImg {
-  width: 70%;
-} */
 .addContactWrapper {
   display: flex;
   flex-direction: column;
@@ -26,11 +23,11 @@
   margin-top: 2rem;
   margin-bottom: 5rem;
 }
-.alert {
+/* .alert {
   color: #47515e;
   text-align: center;
 
-  /* Heading/H1/SemiBold */
+  /* Heading/H1/SemiBold 
   font-family: Roboto;
   font-size: 47.78px;
   font-style: normal;
@@ -38,4 +35,25 @@
   line-height: normal;
   letter-spacing: 0.239px;
   margin-bottom: 4rem;
+} */
+.contacts{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contactImage{
+  color: #ffffff;
+  font-weight: 700;
+  background-color: #0267ff;
+  width: fit-content;
+  padding: 18px;
+  border-radius: 0.5rem;
+}
+.contactDetails{
+  width: 75%;
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+.contactNum{
+  margin-top: 10px;
+  margin-bottom: 20px;
 }

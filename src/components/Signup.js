@@ -1,53 +1,99 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import Email from './forms/Email'
 import Password from './forms/Password'
 import Button from './buttons/Button'
 import styles from './forms/forms.module.css'
 import signup from '../assets/signupMobile.png'
 import { useNavigate } from 'react-router'
-import {  AuthApi } from '../services/api'
-import { useState } from 'react'
 import { RotatingLines } from 'react-loader-spinner'
-import Cookies from 'js-cookie'
 
 import LastName from './forms/LastName'
 import UserFirstName from './forms/UserFirstName'
 import { useDispatch, useSelector } from 'react-redux'
-import { loginUser, signupUser } from '../features/authSlice'
+import {signupUser } from '../features/authSlice'
+import Alert from './alerts/Alert'
+
+import Cookies from 'js-cookie'
 
 const Signup = () => {
   const email = useSelector(state=>state.user.email)
   const firstName = useSelector(state=>state.user.firstName)
   const lastName = useSelector(state=>state.user.lastName)
   const password = useSelector(state=>state.user.password)
-  const response = useSelector((state) => state.user.response);
-  const dispatch = useDispatch()
+  const error = useSelector((state) => state.user.error)
+  const response = useSelector(state=>state.user.response)
+  const loading = useSelector(state=>state.user.loading)
 
-  const [loader, setLoader] = useState(false)
+  const [alert, setAlert]=useState('')
+  const [close, setClose]= useState(false)
+  const [validateError, setValidateError] = useState({})
+
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const handleNavigation = () => {
-    navigate('/login')
-  }
-
-  const handleSubmit = async e => {
-    e.preventDefault()
-    if (
-      firstName.trim() !== '' &&
-      lastName.trim() !== '' &&
-      email.trim() !== '' &&
-      password.trim() !== ''
-    ) {
-      setLoader(true)
-    } else {
-      alert('Fill all inputs')
+  useEffect(() => {
+    if (response) {
+      setAlert(response.message)
+      sessionStorage.setItem('email', response.data.email)
+      sessionStorage.setItem('firstName', response.data.firstName)
+      sessionStorage.setItem('lastName', response.data.lastName)
+      Cookies.set('access_token', response.data.access_token)
+      Cookies.set('refresh_token', response.data.refresh_token)
+      navigate('/')
     }
-    dispatch(signupUser({firstName, lastName, email,  password}))
-    console.log(response);
+  }, [response]);
+
+  useEffect(() => {
+    if (error) {
+      setAlert(error.message)
+      console.log('error', error);
+    }
+  }, [error]);
+
+  const validateForm = () => {
+    const newErrors = {}
+    // Validate name
+    if (firstName.trim() === '') {
+      newErrors.firstName= 'First Name is required'
+    }
+    if (lastName.trim() === '') {
+      newErrors.lastName = 'First Name is required'
+    }
+
+    // Validate email
+    if (email.trim() === '') {
+      newErrors.email = 'Email is required'
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = 'Email is invalid'
+    }
+
+    // Validate password
+    if (password.trim() === '') {
+      newErrors.password = 'Password is required'
+    } else if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{10,}$/.test(password)) {
+      newErrors.password = 'Password must contain atleast one uppercase, one digit and one special character from the set @$!%*#?& and min(10)'
+    }
+    setValidateError(newErrors)
+    return Object.keys(newErrors).length === 0
+  };
+
+  const handleSubmit =  e => {
+    e.preventDefault()
+    if (validateForm()) {
+      dispatch(signupUser({firstName, lastName, email,  password}))
+    }  
+    
   }
 
   return (
     <div className={styles.forms} style={{ width: '50%' }}>
+
+      {(response ||error) && <Alert text={alert}/>}
+      {validateError.firstName && !close ?<Alert text={validateError.firstName} type='error' setClose={setClose}/>:''}
+      {validateError.lastName && !close ?<Alert text={validateError.lastName} type='error' setClose={setClose}/>:''}
+      {validateError.email && !close ?<Alert text={validateError.email} type='error' setClose={setClose}/>:''}
+      {validateError.password && !close ?<Alert text={validateError.password} type='error' setClose={setClose}/>:''}
+
       <img src={signup} className={styles.mobileImg} />
       <div className={styles.heading}> Create Account</div>
       <form onSubmit={handleSubmit}>
@@ -56,7 +102,7 @@ const Signup = () => {
         <Email/>
         <Password />
         <div className={styles.button}>
-          {!loader ? (
+          {!loading ? (
             <Button
               text="Create Account"
               variant="primary"
@@ -70,7 +116,7 @@ const Signup = () => {
                 strokeWidth="4.5"
                 animationDuration="0.95"
                 width="56"
-                visible={true}
+                visible={true} 
               />
             </div>
           )}
@@ -78,7 +124,7 @@ const Signup = () => {
       </form>
       <div className={styles.authOption}>
         Already have an account?{' '}
-        <span className={styles.option} onClick={handleNavigation}>
+        <span className={styles.option} onClick={()=>navigate('/login')}>
           Login
         </span>
       </div>

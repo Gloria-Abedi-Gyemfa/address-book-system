@@ -5,7 +5,7 @@ import styles from './navbar.module.css'
 import Cookies from 'js-cookie'
 import person from '../../assets/person_avatar.png'
 
-const Navbar = () => {
+const Navbar = ({text}) => {
   const [toggleDrawer, setToggleDrawer] = useState(false)
 
   return (
@@ -14,7 +14,7 @@ const Navbar = () => {
         onClick={() => setToggleDrawer(!toggleDrawer)}
         className={styles.menubar}
       />
-      <div className={styles.logo}>Contact Book</div>
+      <div className={styles.logo}>{text.trim() ===''? 'Contact Book' : text}</div>
       {toggleDrawer && <SideDrawer setToggleDrawer={setToggleDrawer}/>}
       <div className={styles.profile}>
       <p className={styles.userName}>{Cookies.get('first_name')}</p>

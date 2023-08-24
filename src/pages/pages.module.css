@@ -43,3 +43,79 @@
   margin-bottom: 2rem;
   margin-top: 6rem;
 }
+.body{
+  width: 90%;
+  margin: auto;
+}
+.search{
+  margin-top: 20px;
+}
+.singleHeader{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.iconContainer{
+  border: 1px solid #b2b1b1;
+  background-color: #ffffff;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+.editContainer{
+  border: none;
+  background-color: #1275D0;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+.icon{
+  color: #b2b1b1;
+  height: 42px;
+  width: 27px;
+}
+.editIcon{
+  color: #ffffff;
+  height: 42px;
+  width: 27px;
+}
+
+.contactDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.contactImage{
+  margin: auto;
+  width: 55%;
+  height: 190px;
+  border-radius: 1rem;
+}
+.contactImage img{
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+.name{
+  font-weight: 600;
+  color: gray;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+.num{
+  color: #b2b1b1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.contactIcon{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}

@@ -1,0 +1,38 @@
+.success{
+    margin-top: 20px;
+    width: 92%;
+    background-color: aquamarine;
+    color: green;
+    display: flex;
+    padding: 2rem 1rem;
+    justify-content: space-between;
+    border-radius: 12px;
+}
+.error{
+    margin-top: 20px;
+    width: 92%;
+    border-radius: 9px;
+    background: #FF3A41;
+    color: #EAEAEA;
+    font-size: 14px;
+    display: flex;
+    padding: 3rem 1rem;
+    justify-content: space-between;
+
+}
+.closeSuccess{
+    color: green;
+    cursor: pointer;
+}
+.closeSuccess:hover{
+    background-color: rgb(60, 138, 112);
+}
+.closeError{
+    color: #EAEAEA;
+    cursor: pointer;
+    width: 50px;
+    height: 20px;
+}
+.closeError:hover{
+    background-color: #fb6267;
+}

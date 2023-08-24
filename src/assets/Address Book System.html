@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://localhost:3000/login -->
+<html lang="en"><script type="text/javascript" src="chrome-extension://lhhbnkkjefhgnlfjhjdbnijiikiofgbc/listener.bundle.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Address Book System</title>
+  <style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Roboto:&display=swap);</style><style type="text/css">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --grey: #b8b7bc;
+  --orange: #fa8e3f;
+
+  --dark-blue: #020125;
+  --green-color: #014e56;
+  --pink: #f67e7e;
+  --white: #fff;
+  --dark-green: #318CE7;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--light-grey);
+  font-family: 'Roboto', sans-serif;
+}
+a{
+  text-decoration: none;
+  font-weight: bolder;
+  color: var(--dark-green);
+}
+</style><style type="text/css">.gallery_gallery__1VjoH {
+  position: relative;
+  background: linear-gradient(0deg, #0267ff, #0267ff),
+    linear-gradient(100.97deg, #6425d3 21.56%, #a259ff 84.43%),
+    linear-gradient(103.38deg, #1275d0 26.38%, rgba(185, 38, 188, 0.46) 78.13%);
+  /* width: 50%; */
+}
+.gallery_personImg__3f8I5 {
+  position: absolute;
+  bottom: 0;
+  height: 95%;
+}
+.gallery_person__3zp6v {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 790px) {
+  .gallery_gallery__1VjoH {
+    display: none;
+  }
+}
+</style><style type="text/css">.pages_authPage__2sRq1 {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+.pages_userName__2K8yj{
+  text-transform: capitalize;
+}
+.pages_addContact__1GTb8{
+  margin-bottom: 2rem;
+}
+.pages_camera__2fi-7{
+  background-color: #1275D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: auto;
+  bottom: 55px;
+  position: relative;
+}
+.pages_cam__Yq0HA{
+  color: #ffffff;
+  width: 100px;
+  height: 100px;
+}
+.pages_updateFormWrap__vP30h{
+  margin-top: -22px;
+}
+.pages_form__1HnAH{
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0rem 1.8rem 2.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  margin-top: 6rem;
+}</style><style type="text/css">.forms_forms__31spC {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.forms_button__3JAgt {
+  margin-top: 30px;
+}
+.forms_input__1RHa4 {
+  padding-left: 0.37rem;
+  padding-right: 0.37rem;
+  width: 18.75rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #999999;
+}
+.forms_inputWrapper__22HSx {
+  margin-top: 1.5rem;
+}
+.forms_heading__2fdpk {
+  color: #1d2939;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.166px;
+  margin-right: 3rem;
+}
+.forms_authOption__1Cd4V {
+  color: #a6a6a6;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.08px;
+  margin-top: 1.25rem;
+}
+.forms_option__2QhOR {
+  color: #0267ff;
+  cursor: pointer;
+}
+.forms_mobileImg__2noRG {
+  display: none;
+}
+.forms_spinner__3xk4l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.forms_contactBtns__3_1Va {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.forms_genderWrapper__3icMI{
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.forms_gender__12tS1{
+  display: flex;
+  justify-content: space-between;
+}
+.forms_genderType__25_Ap{
+  margin-top: 0.5rem;
+}
+.forms_genderValue__2t--X{
+  color: #686868;
+}
+@media (max-width: 780px) {
+  .forms_forms__31spC {
+    width: 100% !important;
+    justify-content: start;
+  }
+  .forms_mobileImg__2noRG {
+    display: block;
+    margin-bottom: 1.25rem;
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 310px) {
+  .forms_heading__2fdpk {
+    margin-right: 0 !important;
+  }
+}
+</style><style type="text/css">button{
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+}
+.button_primary__2V9KG {
+  background: linear-gradient(0deg, #0267ff 0%, #0267ff 100%),
+    linear-gradient(127deg, #6425d3 0%, #a259ff 100%),
+    linear-gradient(0deg, #0267ff 0%, #0267ff 100%),
+    linear-gradient(81deg, #1275d0 0%, #62aef3 100%);
+  color: #ffffff;
+  
+}
+.button_tertiary__2Lvig {
+  background: #ffffff;
+  color: #47515e;
+  border: 1px solid #000000 !important;
+}
+.button_danger__3-5px{
+  background-color: #ff0000;
+  color: #ffffff;
+}
+.button_large__3kpA5 {
+  width: 18.75rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.08px;
+}
+.button_medium__2trGV {
+  width: 8.75rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.08px;
+}
+</style><style type="text/css">.alert_success__1IZ3b{
+    margin-top: 20px;
+    width: 92%;
+    background-color: aquamarine;
+    color: green;
+    display: flex;
+    padding: 2rem 1rem;
+    justify-content: space-between;
+    border-radius: 12px;
+}
+.alert_closeIcon__6mcDx{
+    color: green;
+}
+.alert_closeIcon__6mcDx:hover{
+    background-color: rgb(60, 138, 112);
+}</style><style type="text/css">/* .addContactImg {
+  width: 70%;
+} */
+.cards_addContactWrapper__1YomY {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.cards_addBtn__2EEqC {
+  border-radius: 4px;
+  background: linear-gradient(0deg, #0267ff 0%, #0267ff 100%),
+    linear-gradient(127deg, #6425d3 0%, #a259ff 100%),
+    linear-gradient(0deg, #0267ff 0%, #0267ff 100%),
+    linear-gradient(81deg, #1275d0 0%, #62aef3 100%);
+  color: #ffffff;
+  border: none;
+  width: 16.75rem;
+  height: 3.7rem;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.08px;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+.cards_alert__ILZzu {
+  color: #47515e;
+  text-align: center;
+
+  /* Heading/H1/SemiBold */
+  font-family: Roboto;
+  font-size: 47.78px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.239px;
+  margin-bottom: 4rem;
+}
+</style><style type="text/css">.navbar_navbar__2nY55 {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0.8rem;
+  background-color: #0000ff;
+  border-bottom: 1px solid grey;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.navbar_menubar__1LOP2 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: larger;
+ }
+.navbar_drawerWrapper__3PVfw{
+  width: 100%;
+  height: 116.4%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+.navbar_drawerBackground__1fOxI{
+  position: absolute;
+  left: 0;
+}
+.navbar_dropdown__QaoEl {
+  position: absolute;
+  color: #344054;
+  height: 100vh;
+  top: 6.1rem;
+  background-color: #ffffff;
+  opacity: 1;
+  padding: 0.5rem 4rem 1rem 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 41;
+}
+ul {
+  list-style: none;
+}
+.navbar_list__2uPKB {
+  list-style: none;
+  margin-top: 4rem;
+  cursor: pointer;
+  width: max-content;
+}
+.navbar_list__2uPKB:hover{
+  background-color: #F2F2F2;
+  padding: 0.5rem;
+}
+.navbar_list1__UyWBo{
+  margin-top: 2rem !important;
+}
+.navbar_profile__2-NIG {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.navbar_userName__1QSJc{
+  text-transform: capitalize;
+  margin-right: 1rem;
+}
+.navbar_logo__2RX5c {
+  color: #ffff;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.115px;
+}
+.navbar_personAvatar__PLN6r{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+.navbar_informedBar__2XS-2{
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #1D2939;
+font-family: Roboto;
+font-size: 1.2rem;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+letter-spacing: 0.3px;
+cursor: pointer;
+}
+.navbar_about__WKGHK{
+  display: flex;
+}
+.navbar_aboutPage__1bfGH{
+  margin-left: 1rem;
+}
+.navbar_close__N_Vra:hover{
+  background-color: #F2F2F2;
+}
+.navbar_settings__1FF_x{
+  position:absolute;
+  background-color: #ffffff;
+  padding: 1rem;
+  right: 0;
+  top: 10rem;
+  width: 40%;
+  z-index: 40;
+}</style><style type="text/css">.modal_logoutCard__1Iv2n{
+    background-color: #ffffff;
+    padding: 2.5rem;
+    position: fixed;
+    top: 35%;
+    left: 18%;
+    z-index: 51;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 0.5rem;
+    }
+.modal_logoutBtns__1WrMZ{
+    margin-top: 2rem;
+}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div><div class="pages_authPage__2sRq1"><div class="gallery_gallery__1VjoH" style="width: 50%;"><img src="./Address Book System_files/pattern.2232cfb3.png" style="width: 100%;"><div class="gallery_personImg__3f8I5"><img src="./Address Book System_files/login.cd7e4e22.png" class="gallery_person__3zp6v"></div></div><div class="forms_forms__31spC" style="width: 50%;"><img src="./Address Book System_files/loginMobile.716fbefb.png" class="forms_mobileImg__2noRG"><div class="forms_heading__2fdpk"> Login</div><form><div class="forms_inputWrapper__22HSx"><label>Email</label><div><input type="email" placeholder="Enter correct email" class="forms_input__1RHa4" required="" value="gloria@mail.com"></div></div><div class="forms_inputWrapper__22HSx"><label>Password</label><div><input type="password" placeholder="********" class="forms_input__1RHa4" required="" value=""><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-left: -32px; cursor: pointer;"><path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg></div></div><div class="forms_button__3JAgt"><button class="button_large__3kpA5 button_primary__2V9KG">Login</button></div></form><div class="forms_authOption__1Cd4V">Don't have an account? <span class="forms_option__2QhOR">Signup</span></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./Address Book System_files/bundle.js.download"></script><script src="./Address Book System_files/1.chunk.js.download"></script><script src="./Address Book System_files/main.chunk.js.download"></script><script src="./Address Book System_files/main.d1fc8f14f33b6f325fe2.hot-update.js.download"></script>
+
+</body></html>

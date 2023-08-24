@@ -25,7 +25,9 @@ const ContactCard = () => {
         )
         console.log(response)
         setData(response)
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchContacts()
   }, [])
@@ -42,6 +44,7 @@ const ContactCard = () => {
           </div>
         </div>
       ) : (
+        <>
         <div className={styles.addContactWrapper}>
           <div className={styles.alert}>Have No Contact?</div>
           <img src={addContact} className={styles.addContactImg} />
@@ -52,6 +55,15 @@ const ContactCard = () => {
             Add Contact{' '}
           </button>
         </div>
+
+        <div className={styles.contacts} onClick={()=>navigate('/user_contact')}>
+          <div className={styles.contactImage}>GG</div>
+          <div className={styles.contactDetails}>
+            <p className={styles.contactName}>Gloria</p>
+            <p className={styles.contactNum}>02344567910</p>
+          </div>
+        </div>
+        </>
       )}
     </>
   )

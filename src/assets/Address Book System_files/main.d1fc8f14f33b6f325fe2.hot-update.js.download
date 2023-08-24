@@ -1,0 +1,214 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/components/Login.js":
+/*!*********************************!*\
+  !*** ./src/components/Login.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var C_Users_GloriaGyemfa_Desktop_projects_address_book_system_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _forms_Password__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./forms/Password */ "./src/components/forms/Password.js");
+/* harmony import */ var _buttons_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./buttons/Button */ "./src/components/buttons/Button.js");
+/* harmony import */ var _forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./forms/forms.module.css */ "./src/components/forms/forms.module.css");
+/* harmony import */ var _forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _forms_Email__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./forms/Email */ "./src/components/forms/Email.js");
+/* harmony import */ var _assets_loginMobile_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/loginMobile.png */ "./src/assets/loginMobile.png");
+/* harmony import */ var _assets_loginMobile_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_loginMobile_png__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-loader-spinner */ "./node_modules/react-loader-spinner/dist/esm/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _features_authSlice__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../features/authSlice */ "./src/features/authSlice.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/dist/js.cookie.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _alerts_Alert__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./alerts/Alert */ "./src/components/alerts/Alert.js");
+
+var _this = undefined,
+  _jsxFileName = "C:\\Users\\GloriaGyemfa\\Desktop\\projects\\address-book-system\\src\\components\\Login.js";
+
+
+
+
+
+
+
+
+
+
+
+
+var Login = function Login() {
+  var email = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["useSelector"])(function (state) {
+    return state.user.email;
+  });
+  var password = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["useSelector"])(function (state) {
+    return state.user.password;
+  });
+  var loading = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["useSelector"])(function (state) {
+    return state.user.loading;
+  });
+  var response = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["useSelector"])(function (state) {
+    return state.user.response;
+  });
+  var error = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["useSelector"])(function (state) {
+    return state.user.error;
+  });
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+    _useState2 = Object(C_Users_GloriaGyemfa_Desktop_projects_address_book_system_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+    alert = _useState2[0],
+    setAlert = _useState2[1];
+  var navigate = Object(react_router__WEBPACK_IMPORTED_MODULE_7__["useNavigate"])();
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["useDispatch"])();
+  var handleNavigation = function handleNavigation() {
+    navigate('/signup');
+  };
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    if (response) {
+      setAlert(response.message);
+      if (response.data) {
+        sessionStorage.setItem('email', response.data.email);
+        sessionStorage.setItem('firstName', response.data.firstName);
+        sessionStorage.setItem('lastName', response.data.lastName);
+        js_cookie__WEBPACK_IMPORTED_MODULE_11___default.a.set('access_token', response.data.access_token);
+        js_cookie__WEBPACK_IMPORTED_MODULE_11___default.a.set('refresh_token', response.data.refresh_token);
+      }
+      navigate('/');
+    }
+    if (error) {
+      setAlert(error.message);
+      console.log('error', error);
+    }
+  }, [response, error]);
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    dispatch(Object(_features_authSlice__WEBPACK_IMPORTED_MODULE_10__["loginUser"])({
+      email: email,
+      password: password
+    }));
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: _forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.forms,
+    style: {
+      width: '50%'
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 5
+    }
+  }, (response || error) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_alerts_Alert__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    text: alert,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 31
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: _assets_loginMobile_png__WEBPACK_IMPORTED_MODULE_6___default.a,
+    className: _forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.mobileImg,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 7
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: _forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.heading,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 7
+    }
+  }, " Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+    onSubmit: handleSubmit,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_forms_Email__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_forms_Password__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: _forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.button,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 9
+    }
+  }, !loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_buttons_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    text: "Login",
+    variant: "primary",
+    size: "large",
+    page: "auth",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 13
+    }
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: _forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.spinner,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_loader_spinner__WEBPACK_IMPORTED_MODULE_8__["RotatingLines"], {
+    strokeColor: "blue",
+    strokeWidth: "4.5",
+    animationDuration: "0.95",
+    width: "56",
+    visible: true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70,
+      columnNumber: 15
+    }
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: _forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.authOption,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81,
+      columnNumber: 7
+    }
+  }, "Don't have an account?", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    className: _forms_forms_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.option,
+    onClick: handleNavigation,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83,
+      columnNumber: 9
+    }
+  }, "Signup")));
+};
+/* harmony default export */ __webpack_exports__["default"] = (Login);
+
+/***/ })
+
+})
+//# sourceMappingURL=main.d1fc8f14f33b6f325fe2.hot-update.js.map

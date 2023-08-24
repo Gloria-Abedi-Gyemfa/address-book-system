@@ -1,0 +1,25 @@
+
+.input{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border: none;
+    border-radius: 0.5rem;
+    height: fit-content;
+    padding: 0.5rem;
+    background-color: #f0f2fc;
+}
+.input input{
+    border: none;
+    width: 90%;
+    background-color: #f0f2fc;
+}
+.input input:focus{
+    border-color: white;
+}
+.input input:active{
+    border-color: white;
+}
+.searchIcon{
+    color: grey;
+}

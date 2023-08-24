@@ -7,7 +7,6 @@ const initialState={
     lastName: '',
     loading: false,
     response: null
-    // token: sessionStorage.get('access_token')|| ''
 }
 export const loginUser = createAsyncThunk('user', async(body)=>{
     try {
@@ -15,14 +14,18 @@ export const loginUser = createAsyncThunk('user', async(body)=>{
         return response.data
     } catch (error) {
         console.log(error.response.data.message);
+        return error.response.data
     }
     
 } );
 
 export const signupUser = createAsyncThunk('user', async(body)=>{
-    const response = await AuthApi.post('register',body )
-    console.log(response.data.message)
-    return response.data
+    try {
+        const response = await AuthApi.post('register',body )
+        return response.data
+    } catch (error) {
+        return error.message
+    }
 })
 
 const authSlice = createSlice({
@@ -42,25 +45,32 @@ const authSlice = createSlice({
         setPassword: (state, {payload})=>{
             state.password = payload
         },
-        clearToken: (state)=>{
-            state.token = '';
-            sessionStorage.remove('authToken');
-
+        setRespone: (state, {payload})=>{
+            state.response = payload
         }
     },
     extraReducers:{
         [loginUser.pending]:(state)=>{
             state.loading = true
         },
-        [loginUser.fulfilled]: (state, {payload:message, error, data})=>{
+        [loginUser.fulfilled]: (state, {payload})=>{
             state.loading = false;
-            state.error = error;
-            state.message = message
-            state.response = data; 
+            state.response = payload; 
         },
-        [loginUser.rejected]: (state)=>{
+        [loginUser.rejected]: (state, {payload})=>{
             state.loading = false;
-            state.error= ''
+            state.error = payload
+        },
+        [signupUser.pending]:(state)=>{
+            state.loading = true
+        },
+        [signupUser.fulfilled]: (state, {payload})=>{
+            state.loading = false;
+            state.response = payload; 
+        },
+        [signupUser.rejected]: (state, {payload})=>{
+            state.loading = false;
+            state.error = payload
         },
 
     }
@@ -70,4 +80,4 @@ const authSlice = createSlice({
 
 
 export default authSlice.reducer
-export const {setEmail, setPassword,setFirstName, setLastName} = authSlice.actions
+export const {setEmail, setPassword,setFirstName, setLastName, setRespone} = authSlice.actions
