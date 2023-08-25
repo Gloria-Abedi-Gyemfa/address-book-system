@@ -53,7 +53,7 @@
 .singleHeader{
   display: flex;
   justify-content: space-between;
-  margin-top: 3rem;
+  margin-top: 20px;
 }
 .iconContainer{
   border: 1px solid #b2b1b1;

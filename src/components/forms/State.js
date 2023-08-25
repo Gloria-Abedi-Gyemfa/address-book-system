@@ -12,7 +12,6 @@ const State = ({ state, setState }) => {
           value={state}
           onChange={e => setState(e.target.value)}
           className={styles.input}
-          required
         />
       </div>
     </div>

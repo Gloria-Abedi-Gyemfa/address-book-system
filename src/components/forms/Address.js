@@ -1,7 +1,11 @@
 import React from 'react'
 import styles from './forms.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { setAddress } from '../../features/authSlice'
 
-const Address = ({ address, setAddress }) => {
+const Address = () => {
+  const address = useSelector(state=>state.user.address)
+  const dispatch = useDispatch()
   return (
     <div className={styles.inputWrapper}>
       <label>Address</label>
@@ -10,9 +14,8 @@ const Address = ({ address, setAddress }) => {
           type="text"
           placeholder="town, city"
           value={address}
-          onChange={e => setAddress(e.target.value)}
+          onChange={e => dispatch(setAddress(e.target.value))}
           className={styles.input}
-          required
         />
       </div>
     </div>

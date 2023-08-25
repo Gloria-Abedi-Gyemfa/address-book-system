@@ -13,8 +13,7 @@ const UpdateUser = () => {
     const [gender, setGender] = useState('')
   return (
     <div>
-        <Navbar/>
-        <InformedBar text='Edit Account'/>
+        <Navbar text='Update Account'/>
         <div className={styles.updateFormWrap}>
         <form className={styles.form}>
         <div className={styles.camera}><BsCameraFill className={styles.cam}/></div>

@@ -12,8 +12,8 @@ const LastName = () => {
       <div>
         <input
           type="text"
-          placeholder="Enter your Last name"
-          value={lastName}
+          placeholder={sessionStorage.getItem('lastName')}
+          value={sessionStorage.getItem('lastName')}
           onChange={e => dispatch(setLastName(e.target.value))}
           className={styles.input}
           required

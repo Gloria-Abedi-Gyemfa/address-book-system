@@ -1,10 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { AuthApi } from "../services/api";
+import { AuthApi, ContactApi } from "../services/api";
 const initialState={
     email : '',
     password: '',
     firstName: '',
     lastName: '',
+    name:'',
+    phone:'',
+    address:'',
     loading: false,
     response: null
 }
@@ -28,6 +31,15 @@ export const signupUser = createAsyncThunk('user', async(body)=>{
     }
 })
 
+export const newUser = createAsyncThunk('user', async(body)=>{
+    try {
+        const response = await ContactApi('add-contact', body)
+        return response.data
+    } catch (error) {
+        
+    }
+})
+
 const authSlice = createSlice({
     name: 'user',
     initialState,
@@ -44,6 +56,15 @@ const authSlice = createSlice({
         },
         setPassword: (state, {payload})=>{
             state.password = payload
+        },
+        setName: (state, {payload})=>{
+            state.name = payload
+        },
+        setPhone: (state, {payload})=>{
+            state.phone = payload
+        },
+        setAddress: (state, {payload})=>{
+            state.address = payload
         },
         setRespone: (state, {payload})=>{
             state.response = payload
@@ -72,6 +93,17 @@ const authSlice = createSlice({
             state.loading = false;
             state.error = payload
         },
+        [newUser.pending]: (state)=>{
+            state.loading = true
+        },
+        [newUser.fulfilled]: (state, {payload})=>{
+            state.loading = false
+            state.response = payload
+        }, 
+        [newUser.rejected]:(state, {payload})=>{
+            state.loading = false
+            state.error = payload
+        }
 
     }
 })
@@ -80,4 +112,4 @@ const authSlice = createSlice({
 
 
 export default authSlice.reducer
-export const {setEmail, setPassword,setFirstName, setLastName, setRespone} = authSlice.actions
+export const {setEmail, setPassword,setFirstName, setLastName,setName, setAddress, setPhone, setRespone} = authSlice.actions

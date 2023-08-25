@@ -13,6 +13,9 @@ const Button = ({ text, size, variant, page, setShowModal }) => {
     if(text === 'No'){
       setShowModal(false)
     }
+    if(text === 'Cancel'){
+      window.history.back();
+    }
   }
 
   return (

@@ -1,7 +1,11 @@
 import React from 'react'
 import styles from './forms.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { setPhone } from '../../features/authSlice'
 
-const Phone = ({phone, setPhone}) => {
+const Phone = () => {
+  const phone = useSelector(state=>state.user.name)
+  const dispatch = useDispatch()
   return (
     <div className={styles.inputWrapper}>
       <label>Phone</label>
@@ -10,7 +14,7 @@ const Phone = ({phone, setPhone}) => {
           type="number"
           placeholder="(233) 123456789"
           value={phone}
-          onChange={e => setPhone(e.target.value)}
+          onChange={e => dispatch(setPhone(e.target.value))}
           className={styles.input}
           required
         />

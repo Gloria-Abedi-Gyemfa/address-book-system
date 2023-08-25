@@ -35,12 +35,11 @@ const ContactCard = () => {
   return (
     <>
       {data.length > 0 ? (
-        <div className={styles.contact}>
-          <div className="userImg"></div>
-          <div className="contactDetails">
-            <p className="name">Gloria</p>
-            <p className="number">+234567890</p>
-            <p className="email">akosuagyemfa@gmail.com</p>
+        <div className={styles.contacts} onClick={()=>navigate('/user_contact')}>
+          <div className={styles.contactImage}>GG</div>
+          <div className={styles.contactDetails}>
+            <p className={styles.contactName}>Gloria</p>
+            <p className={styles.contactNum}>02344567910</p>
           </div>
         </div>
       ) : (
@@ -56,13 +55,7 @@ const ContactCard = () => {
           </button>
         </div>
 
-        <div className={styles.contacts} onClick={()=>navigate('/user_contact')}>
-          <div className={styles.contactImage}>GG</div>
-          <div className={styles.contactDetails}>
-            <p className={styles.contactName}>Gloria</p>
-            <p className={styles.contactNum}>02344567910</p>
-          </div>
-        </div>
+        
         </>
       )}
     </>

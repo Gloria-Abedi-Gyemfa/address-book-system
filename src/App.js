@@ -7,13 +7,15 @@ import HomePage from './pages/HomePage'
 import AddContact from './pages/AddContact'
 import UpdateUser from './pages/UpdateUser'
 import SingleContact from './pages/SingleContact'
+import EditContact from './pages/EditContact'
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='user_contact' element={<SingleContact/>}/>
+          <Route path='/edit_contact' element={<EditContact/>}/>
+          <Route path='/user_contact' element={<SingleContact/>}/>
           <Route path='/account_settings' element={<UpdateUser/>}/>
           <Route path="/add_contact" element={<AddContact />} />
           <Route path="/" element={<HomePage />} />

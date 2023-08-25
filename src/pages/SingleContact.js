@@ -6,13 +6,20 @@ import styles from './pages.module.css'
 import person from '../assets/foto-sushi-6anudmpILw4-unsplash.jpg'
 import {AiOutlineMessage} from 'react-icons/ai'
 import {MdMailOutline} from 'react-icons/md'
+import { useNavigate } from 'react-router'
 
 const SingleContact = () => {
+    const navigate = useNavigate()
+
+    const handleBack = () => {
+         window.history.back()
+    }
+
   return (
     <div className={styles.body}>
         <div className={styles.singleHeader}>
-            <div className={styles.iconContainer}><BiChevronLeft className={styles.icon}/></div>
-            <div className={styles.editContainer}><FaEdit  className={styles.editIcon}/></div>
+            <div className={styles.iconContainer} onClick={handleBack}><BiChevronLeft className={styles.icon}/></div>
+            <div className={styles.editContainer} onClick={()=>navigate('/edit_contact')}><FaEdit  className={styles.editIcon}/></div>
         </div>
         <div className={styles.contactDetails}>
             <div className={styles.contactImage}>

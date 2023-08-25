@@ -8,13 +8,20 @@ import person from '../../assets/person_avatar.png'
 const Navbar = ({text}) => {
   const [toggleDrawer, setToggleDrawer] = useState(false)
 
+  const renderLogo = () => {
+    if (!text || text.trim() === '') {
+      return 'Contact Book';
+    }
+    return text;
+  };
+
   return (
     <div className={styles.navbar}>
       <BiMenu
         onClick={() => setToggleDrawer(!toggleDrawer)}
         className={styles.menubar}
       />
-      <div className={styles.logo}>{text.trim() ===''? 'Contact Book' : text}</div>
+      <div className={styles.logo}>{renderLogo()}</div>
       {toggleDrawer && <SideDrawer setToggleDrawer={setToggleDrawer}/>}
       <div className={styles.profile}>
       <p className={styles.userName}>{Cookies.get('first_name')}</p>
