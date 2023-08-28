@@ -1,6 +1,5 @@
 import React from 'react'
 import {FaSearch} from 'react-icons/fa'
-import Button from '../buttons/Button'
 import styles from './search.module.css'
 
 const Search = () => {

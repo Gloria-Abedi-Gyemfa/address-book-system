@@ -67,7 +67,7 @@ ul {
   text-transform: capitalize;
   margin-right: 1rem;
 }
-.logo {
+.pageDecription {
   color: #ffff;
   font-size: 1.3rem;
   font-style: normal;
@@ -79,20 +79,6 @@ ul {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-}
-.informedBar{
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem 1rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  color: #1D2939;
-font-family: Roboto;
-font-size: 1.2rem;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-letter-spacing: 0.3px;
-cursor: pointer;
 }
 .about{
   display: flex;
@@ -111,4 +97,23 @@ cursor: pointer;
   top: 10rem;
   width: 40%;
   z-index: 40;
+}
+.search, .mainLogo, .navbarList{
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .menubar, .pageDecription{
+    display: none;
+  }
+  .search, .mainLogo, .navbarList{
+    display: block;
+  }
+  .navbarList{
+    display: flex;
+    color: white;
+    width: 50%;
+    justify-content: space-between;
+  }
+  
 }

@@ -119,3 +119,27 @@
   justify-content: space-around;
   margin-top: 10px;
 }
+.personAvatar{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+.date, .phone, .content{
+  display: flex;
+}
+.sidebar{
+  width: 23.625%;
+  height: 95vh;
+  border-right: 1px solid gray;
+  display: flex;
+}
+.contactCard{
+  height: 100vh;
+  margin-left: 2rem;
+}
+@media (min-width: 700px) {
+  .search{
+    display: none;
+  }
+  
+}
